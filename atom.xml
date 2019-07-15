@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="/jianxiongc.github.io.git/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://jianxiongc.github.ios/blogs/"/>
   <updated>2019-07-13T10:00:34.370Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://jianxiongc.github.ios/blogs/</id>
   
   <author>
     <name>Jianxiong</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/07/13/hello-world/"/>
-    <id>http://yoursite.com/2019/07/13/hello-world/</id>
+    <link href="https://jianxiongc.github.ios/blogs/2019/07/13/hello-world/"/>
+    <id>https://jianxiongc.github.ios/blogs/2019/07/13/hello-world/</id>
     <published>2019-07-13T10:00:34.370Z</published>
     <updated>2019-07-13T10:00:34.370Z</updated>
     
