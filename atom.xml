@@ -5,9 +5,9 @@
   
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://github.com/jianxiongc/blog/"/>
+  <link href="https://github.com/jianxiongc/"/>
   <updated>2019-07-13T10:00:34.370Z</updated>
-  <id>https://github.com/jianxiongc/blog/</id>
+  <id>https://github.com/jianxiongc/</id>
   
   <author>
     <name>Jianxiong</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://github.com/jianxiongc/blog/2019/07/13/hello-world/"/>
-    <id>https://github.com/jianxiongc/blog/2019/07/13/hello-world/</id>
+    <link href="https://github.com/jianxiongc/2019/07/13/hello-world/"/>
+    <id>https://github.com/jianxiongc/2019/07/13/hello-world/</id>
     <published>2019-07-13T10:00:34.370Z</published>
     <updated>2019-07-13T10:00:34.370Z</updated>
     
