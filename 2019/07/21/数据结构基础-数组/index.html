@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>数据结构基础-数组 | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Array">
+    <meta name="description" content="数据结构基础 - 数组什么是数组？数组对应的英文是Array ， 是有限个相同类型的变量所组成的有序集合，数组中的每一个变量被称为元素。数组是最为简单，最为常用的数据结构。已整数数组为例，数组的存储形式如下                                                                                              -w5">
+<meta name="keywords" content="Array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构基础-数组">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="数据结构基础 - 数组什么是数组？数组对应的英文是Array ， 是有限个相同类型的变量所组成的有序集合，数组中的每一个变量被称为元素。数组是最为简单，最为常用的数据结构。已整数数组为例，数组的存储形式如下                                                                                              -w5">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/media/15636648896808/15636663047169.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/media/15636648896808/15636959014666.jpg">
+<meta property="og:updated_time" content="2019-07-21T08:07:21.693Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构基础-数组">
+<meta name="twitter:description" content="数据结构基础 - 数组什么是数组？数组对应的英文是Array ， 是有限个相同类型的变量所组成的有序集合，数组中的每一个变量被称为元素。数组是最为简单，最为常用的数据结构。已整数数组为例，数组的存储形式如下                                                                                              -w5">
+<meta name="twitter:image" content="https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/media/15636648896808/15636663047169.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">数据结构基础-数组</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">数据结构基础-数组</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-20T23:19:07.000Z" itemprop="datePublished" class="page-time">
+  2019-07-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/数据结构/">数据结构</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#数据结构基础-数组"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据结构基础 - 数组</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-数据结构基础-数组"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">数据结构基础-数组</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-21 07:19:07" datetime="2019-07-20T23:19:07.000Z"  itemprop="datePublished">2019-07-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/数据结构/">数据结构</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="数据结构基础-数组"><a href="#数据结构基础-数组" class="headerlink" title="数据结构基础 - 数组"></a>数据结构基础 - 数组</h1><p>什么是数组？<br>数组对应的英文是Array ， 是有限个相同类型的变量所组成的有序集合，数组中的每一个变量被称为元素。数组是最为简单，最为常用的数据结构。<br>已整数数组为例，数组的存储形式如下</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15636648896808/15636663047169.jpg" alt="-w526" title>
+                </div>
+                <div class="image-caption">-w526</div>
+            </figure>
+
+<p>数组里每一个元素都有自己的下标，这个下标从0开始，一直到数组长度-1.</p>
+<p>数组的另一个特点，就是在程序中顺序存储，因此可以很好的实现逻辑上的顺序表。<br>数组在内存中的顺序存储，具体是什么样子呢。</p>
+<p>内存是由一个个连续的内存单元组成的，每一个内存单元都有自己的地址。在这些内存单元中，有些被其他数据占用了，有些是空闲的。</p>
+<p>数组的每一个元素，都存储在内存单元中，并且元素之间精密排列，即不能打乱元素的存储顺序，也不能跳过过个存储单元进行存储。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15636648896808/15636959014666.jpg" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+<p>在上图中，橙色的格子代表空闲的存储单元，灰色的格子代表已占用的存储单元，而蓝色的连续格子代表数组在内存中的位置。<br>不同类型的数组，每个元素所占的字节个数也不同，本图只是一个简单的示意图。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-21T08:07:21.693Z" itemprop="dateUpdated">2019-07-21 16:07:21</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/07/21/数据结构基础-数组/" target="_blank" rel="external">https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Array/">Array</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/&title=《数据结构基础-数组》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/&title=《数据结构基础-数组》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据结构基础-数组》 — Jianxiong&url=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/07/20/Swift - 变量与常量/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Swift - 变量与常量</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/&title=《数据结构基础-数组》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/&title=《数据结构基础-数组》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《数据结构基础-数组》 — Jianxiong&url=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/07/21/数据结构基础-数组/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3a0W7qMBAE0Pz/T9PXSpQw47URqk6e0AXSHCN59876uuLr8XTdv/v8md+fvL9n8i+bLzw8PLzxo7d/8tW7z6/nyPyZ8fDw8E7zkk381aLkS5Dv4cnfun9mPDw8vO/hJe31/Z2Td/Hw8PD+Hy9piJOisqtNx8PDw/s8b9et20DhfsnaKAQPDw/vM7y8qf2e10fme3h4eHjjqXpSJJKmdu3+bTH441t4eHh4B3j5hnvfsLbN8WRXr58TDw8PbysviRV2HRFo44N2zPbHIuLh4eEd4E2i1bzNbSPddji3LUfBw8PDO5Z5Jht0fiAgP4KQH0rAw8PDO83LC8BaULsWWyTRcPG74eHh4W3itUFDO+6aHz5oR2Uv53t4eHh4B3j51p/HE3nTPGmjX34GDw8P7xgvjwPaEf7kCMI8yMDDw8M7wUu2/rUjUPl388XKfwA8PDy8c7z22NPa4ac2hshb7TctOB4eHt5HePktJuP8PMhoW+pr1wrh4eHhBRnCJHhtGfkhgLWwGA8PD+80L4kD8oY7DxqSd9tf6U1WjYeHh3eAN4kP2uB13kAXYS4eHh7eVl4eK+RxbT4Maw8lrBUSPDw8vL28R3y1ze68ACy20Xnvj4eHh7fEa9vl/LvtgC2pXYvlBA8PD+8Arw0RcsA86s3vsFgD8fDw8EreWriwxl47nnVNLjw8PLxjvEl7nW/WawvXjuLenIzAw8PDO8xrB1dtlJCEFJMqgIeHh7eX9yivfFOeIOeDNzw8PLxzvHlgsdZYr4W8+euaioeHh1fy2mKQHyDIV7E9KFAUJDw8PLxjvHPBQduUty3ym0/i4eHhfQ2vLRXJo+TUvGDg4eHhfQNvUh7Wot689d9QGPDw8PBiXj58Su6QM9oxWL24eHh4eAd47X/4J4wc0D7PNbnw8PDwUt4Pm6BUud98lvkAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
