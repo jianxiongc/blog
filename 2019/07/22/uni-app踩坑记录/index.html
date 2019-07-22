@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>uni-app踩坑记录 | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="uni-app 微信小程序">
+    <meta name="description" content="注意像素尺寸 ,uni-app官方推荐用upx,小程序是rpx,weex是px，不要弄混了。https://uniapp.dcloud.io/frame?id=%E5%B0%BA%E5%AF%B8%E5%8D%95%E4%BD%8D  注意HBudiler 保存代码机制，默认代码不会保存，记得随手写完command/ctrl + s,编译时检查代码是否都保存了  image 标签一定要设置高度和">
+<meta name="keywords" content="uni-app 微信小程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uni-app踩坑记录">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="注意像素尺寸 ,uni-app官方推荐用upx,小程序是rpx,weex是px，不要弄混了。https://uniapp.dcloud.io/frame?id=%E5%B0%BA%E5%AF%B8%E5%8D%95%E4%BD%8D  注意HBudiler 保存代码机制，默认代码不会保存，记得随手写完command/ctrl + s,编译时检查代码是否都保存了  image 标签一定要设置高度和">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-07-22T13:35:36.127Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="uni-app踩坑记录">
+<meta name="twitter:description" content="注意像素尺寸 ,uni-app官方推荐用upx,小程序是rpx,weex是px，不要弄混了。https://uniapp.dcloud.io/frame?id=%E5%B0%BA%E5%AF%B8%E5%8D%95%E4%BD%8D  注意HBudiler 保存代码机制，默认代码不会保存，记得随手写完command/ctrl + s,编译时检查代码是否都保存了  image 标签一定要设置高度和">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">uni-app踩坑记录</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">uni-app踩坑记录</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-22T13:34:22.000Z" itemprop="datePublished" class="page-time">
+  2019-07-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-uni-app踩坑记录"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">uni-app踩坑记录</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-22 21:34:22" datetime="2019-07-22T13:34:22.000Z"  itemprop="datePublished">2019-07-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ol>
+<li><p>注意像素尺寸 ,uni-app官方推荐用upx,小程序是rpx,weex是px，不要弄混了。<a href="https://uniapp.dcloud.io/frame?id=%E5%B0%BA%E5%AF%B8%E5%8D%95%E4%BD%8D" target="_blank" rel="noopener">https://uniapp.dcloud.io/frame?id=%E5%B0%BA%E5%AF%B8%E5%8D%95%E4%BD%8D</a></p>
+</li>
+<li><p>注意HBudiler 保存代码机制，默认代码不会保存，记得随手写完command/ctrl + s,编译时检查代码是否都保存了</p>
+</li>
+<li><p>image 标签一定要设置高度和宽度，100%  或者 绝对定位都是无效的。地图也一样。 image标签里边不要套text等标签了，不生效；</p>
+</li>
+<li><p>uni-app同小程序一样 display 默认不是flex,所以在使用到flex的特性是 需要加上display:flex。</p>
+</li>
+<li><p>有些情况下需要获取全屏高度，但是不能使用flex:1 或者 abosulte的方式。这个时候可以采用 获取 系统屏幕宽度  / 750 * 系统屏幕高度。代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const systemInfo = uni.getSystemInfoSync();</span><br><span class="line">if (systemInfo.windowWidth &amp;&amp; systemInfo.windowHeight) &#123;</span><br><span class="line">	let multiple = 750/systemInfo.windowWidth;</span><br><span class="line">	that.screenHeight = systemInfo.windowHeight * multiple;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>uniapp 给Data赋值时和微信小程序的区别。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    value: 0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">//小程序采用</span><br><span class="line">this.setData(&#123;</span><br><span class="line">  value: 1</span><br><span class="line">&#125;)</span><br><span class="line">//uni-app</span><br><span class="line">this.value = 1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>uni-app map的 controls 中 position 使用的是px，而外部css使用的upx,这里要注意不要写成upx的值了。 并且position 只支持了 top 和 left定位。 如果要bottom 的话 需要先计算屏幕高度，然后再更改一次正确的位置。默认可以给 iPhone 7标准尺寸的 绝对定位。</p>
+</li>
+<li><p>cover-view 或者 cover-image 支持position 但同样  只支持top 和 left 。需要写 bottom 同 7。</p>
+</li>
+<li><p>iconfont 的使用方式与小程序不同 ，跟weex方式差不多，需要注意copy下来的地址加协议头。<a href="https://uniapp.dcloud.io/frame?id=%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87" target="_blank" rel="noopener">https://uniapp.dcloud.io/frame?id=%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87</a>， text支持  ,cover-view 在模拟器显示 真机不显示</p>
+</li>
+<li><p><map> 标签中的@regionchange  不触发</map></p>
+<blockquote>
+<p>官方说明：事件映射表中没有的原生事件也可以使用，例如map组件的regionchange 事件直接在组件上写成 @regionchange,同时这个事件也非常特殊，它的 event type 有 begin 和 end 两个，导致我们无法在handleProxy 中区分到底是什么事件，所以你在监听此类事件的时候同时监听事件名和事件类型既 &lt;map @regionchange=”functionName” @end=”functionName” @begin=”functionName”&gt;<map>。</map></p>
+</blockquote>
+</li>
+<li><p>uni-app 官方文档中 map并没有支持多边形，但仍然可以按照微信小程序的方式实现。</p>
+</li>
+<li><p>支付宝小程序 如果不是在首页 ，左上角会始终出现返回按钮或者回到主页按钮，不建议在小程序中添加启动页面， 原有启动逻辑可以放在App生命周期中。</p>
+</li>
+<li><p>支付宝小程序想设置navigationBar自定义，文档中并未说明，但在示例Demo中发现 通过页面json文件，”transparentTitle”: “auto”可以实现navigationBar的自定义 ，但是要注意支付宝左上角会有按钮。</p>
+</li>
+<li><p>注意：以:style=””这样的方式设置px像素值，其值为实际像素，不会被编译器转换。</p>
+</li>
+<li><p>非H5端不支持 <a href="https://cn.vuejs.org/v2/guide/class-and-style.html" target="_blank" rel="noopener">Vue官方文档：Class 与 Style 绑定</a> 中的 classObject 和 styleObject 语法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//不支持示例</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view :class=&quot;[activeClass]&quot; :style=&quot;[baseStyles,overridingStyles]&quot;&gt;&lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        data() &#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                activeClass: &#123;</span><br><span class="line">                    &apos;active&apos;: true,</span><br><span class="line">                    &apos;text-danger&apos;: false</span><br><span class="line">                &#125;,</span><br><span class="line">                baseStyles: &#123;</span><br><span class="line">                    color: &apos;green&apos;,</span><br><span class="line">                    fontSize: &apos;30px&apos;</span><br><span class="line">                &#125;,</span><br><span class="line">                overridingStyles: &#123;</span><br><span class="line">                    &apos;font-weight&apos;: &apos;bold&apos;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>### </p>
+<ol>
+<li>iconfont 不显示</li>
+</ol>
+<ul>
+<li>看看css文件中是否导入 font-face</li>
+<li>text 的class中是否有font-family</li>
+<li>iconfont文件中是否这个图标</li>
+<li>css是否存在同名的 iconfont class.</li>
+</ul>
+<ol>
+<li>css 标签选择器设置的属性可能权重过大，导致后面的类选择器无法覆盖它所设置的属性</li>
+<li>uni-app button标签 自带了border属性 ，如果要去掉 参考<a href="http://ask.dcloud.net.cn/question/62262" target="_blank" rel="noopener">http://ask.dcloud.net.cn/question/62262</a></li>
+<li>v-for 中 @click 带参数，必须设置key ，不然click的参数会为空</li>
+<li>map 中绘制线，一定要注意polyline 类型是Array, 虽然它里面是一个Object,但是最外层一定要变成Array，不然会无法显示</li>
+<li>data中声明 mpType的变量，会导致所有的Data设置失效。官方文档并没有将其保留为关键字，但是他的存在确实是所有的Data赋值失效了。主要是与App.mpType冲突，注意下这个坑。 </li>
+<li>mac和windows 下 uni-requset  的Promise支持可能不一致代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uni.request().then(data =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;).catch(error =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>这段代码在Windows下编译并能正常执行到iOS ，Andorid的微信小程序端。在Mac 下编译会报 ui-request…then not functoin 。已提交issuse  <a href="https://github.com/dcloudio/uni-app/issues/351">https://github.com/dcloudio/uni-app/issues/351</a></p>
+<ol>
+<li>uni-bluetooth ， 注意外围设备的services 和characteristic  在iOS 都是大写，在android 都是小写。 注意 createConnection 后还需要discoverServices 和 discovcerCharacteristics 。</li>
+<li>map marker . label = {} 时Android 会出现小蓝点，iOS不会。设置marker的label 为null可以解决。</li>
+<li>微信小程序下，怀疑relaunch页面跳转没有清除， 具体表现为在B页面设置蓝牙状态监听，relaunch 到 C页面，B页面依然能打印蓝牙状态监听的log<a href="https://developers.weixin.qq.com/community/develop/doc/0000e8551d0f309fadc8b123751000?fromCreate=1" target="_blank" rel="noopener">https://developers.weixin.qq.com/community/develop/doc/0000e8551d0f309fadc8b123751000?fromCreate=1</a></li>
+<li>小程序的triggerEvent在uniapp中不支持；</li>
+<li>uni-app 中在data使用 Object.assgin 一定要加在Data中的最后一行，不然小程序会在iOS 9.3的机器上出现白屏问题。目前不清楚是小程序的问题还是uni-app的问题。</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-22T13:35:36.127Z" itemprop="dateUpdated">2019-07-22 21:35:36</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/07/22/uni-app踩坑记录/" target="_blank" rel="external">https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/uni-app-微信小程序/">uni-app 微信小程序</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/&title=《uni-app踩坑记录》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/&title=《uni-app踩坑记录》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《uni-app踩坑记录》 — Jianxiong&url=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/07/21/数据结构基础-数组/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">数据结构基础-数组</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/&title=《uni-app踩坑记录》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/&title=《uni-app踩坑记录》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《uni-app踩坑记录》 — Jianxiong&url=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/07/22/uni-app踩坑记录/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aMXLDMAwFUd//0kqTIg2l/QCdGRHLymNLtJ4KDADi88HrWqy/v66uJHuuvtm8ZMiQ8VrGdbvIw/HHXV3J/3e5jwwZMgYwVlvff+ahk7yI+1D+8MwyZMiQgQMlT/XIa5IhQ4aMTsCtJXMkpMqQIUNGp4hNG2q1YP31WlyGDBkvZPCu+/9//sr5hgwZMl7FuMLF2238YKCTXP7eJUOGjKMZPMClD8FL39qwhQwZMuYweKMtaHuFqR75rweYDBkyxjBq4xS1Arg2lrG8S4YMGUczeHpHvuFBk//Kg7UMGTLOZpARijQ49tNN8gwyZMiYw6i10viIGA+XNZgMGTLmMNLErpMa8hQwznBlyJAxjJEmfJ12W624lSFDxjRGmgKSYJoGZb7nQxUuQ4aMgxjp2BZvuqUF6uZhCxkyZBzESBtnvKFfC+WdQlqGDBlnM3aNQfDSNz06RYcZMmTIOJrBg2MnodxV4m6oyGXIkPFaRqe5lv4NTy5rrToZMmScx6i1+3mhy/eplbIyZMiYw0jHKfZ2+8j3Dy9ahgwZwxjpprXPpGDmr1WGDBmnMq5wpa03PuSRviwZMmTMYfCVpnS1VlonZMuQIeNsBm9+pWGaB+gNRwsyZMgYwEgTuFp47e+/RMqQIUNGOGDBjwfSg4e4nShDhozBDJ7YkXs718uQIWMOY+/IF9+503qTIUPGHEY64tA/qkwfghwVyJAh41DGD9o1apinpCvCAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
