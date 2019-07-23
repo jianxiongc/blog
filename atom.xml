@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/jianxiongc/"/>
-  <updated>2019-07-22T13:35:36.127Z</updated>
+  <updated>2019-07-23T23:17:31.743Z</updated>
   <id>https://github.com/jianxiongc/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>竞品后台分析</title>
+    <link href="https://github.com/jianxiongc/2019/07/24/%E7%AB%9E%E5%93%81%E5%90%8E%E5%8F%B0%E5%88%86%E6%9E%90/"/>
+    <id>https://github.com/jianxiongc/2019/07/24/竞品后台分析/</id>
+    <published>2019-07-23T23:12:12.000Z</published>
+    <updated>2019-07-23T23:17:31.743Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="竞品-iOS-后台分析"><a href="#竞品-iOS-后台分析" class="headerlink" title="竞品 iOS 后台分析"></a>竞品 iOS 后台分析</h1><hr><p>####操作现象:</p><ul><li>每次后台连接上蓝牙之后可以进行操作 摇一摇。</li><li>连接上会接收到通知提醒</li><li>断开会接收到通知提醒</li><li>断连重连都是OK的</li><li>只有在蓝牙连接时才计算后台时间</li></ul><p>####竞品申请的权限</p><ul><li>通知</li><li>位置</li><li>无线数据</li><li>麦克风</li></ul><p>####竞品的后台数据:</p><ul><li>7:41 开启 App 手机 100% 电量</li><li>8:54 查看 App 手机 75%  电量  App占比9%  3分钟前台 24分钟后台</li><li>第二天9:00 查看 App 手机 45电量 App占比11% 3分钟前台 29分钟后台</li></ul><hr><blockquote><p>####根据操作分析:</p></blockquote><p>开启相机 音乐 等打断无声音乐的操作 并没有受到干扰<br> <strong>不是无声音乐保活</strong></p><p>关闭通知和麦克风的权限 后台尝试连接蓝牙操作 可以正常操作 所以不可能是通知或者麦克风保活<br> <strong>不是通知或者麦克风保活</strong></p><p>关闭地理位置权限 后台尝试连接蓝牙操作 可以正常操作 所以不可能是地理位置后台保活<br> <strong>不是地理位置保活</strong></p><blockquote><p>竞品的现象为:</p></blockquote><p>连接蓝牙 -&gt; 开启保活<br>断开蓝牙 -&gt; 关闭保活</p><p>这种保活方式 能最大程度的节省电量 即不连接不计后台时间。</p><p>这种保活方式 是主要是依靠 iOS 系统的蓝牙连接来调用App的代码来实现。</p><h5 id="我们在之前的版本-进行过一次依靠系统蓝牙调起App的方式实现降低功耗的行为。"><a href="#我们在之前的版本-进行过一次依靠系统蓝牙调起App的方式实现降低功耗的行为。" class="headerlink" title="我们在之前的版本 进行过一次依靠系统蓝牙调起App的方式实现降低功耗的行为。"></a>我们在之前的版本 进行过一次依靠系统蓝牙调起App的方式实现降低功耗的行为。</h5><p>优势:功耗极大的降低了。<br>缺陷:当系统内存不足时 会被回收且无法接收到系统通知。导致PKE无法正常使用。</p><p> <strong>和竞品对比存在的不同</strong></p><p>蓝牙配对能否保证App在后台的存活。及当内存不足时能否保活</p><hr><blockquote><p>##参考 </p></blockquote><p>###iOS支持的后台方式:</p><p>###<strong>Audio, AirPlay and Picture in Picture</strong></p><p>此个选项包含四种场景，分别是：音频的播放，录音，AirPlay 及画中画的视频播放。<br>音频的播放：在播放音频时，即使应用退到后台，只要一直有音频在播放，那应用就可以一直在后台运行。</p><p>代码实现可参考：<a href>http://www.linuxidc.com/Linux/2012-08/68364.htm</a></p><p>录音：应用可以请求使用麦克风，而当开启了此后台选项，应用在使用麦克风的时候，即使退到后台，也可以一直后台运行，通过查看微信安装包中的 plist 文件，微信的语音聊天，就是通过这种方式实现的。而当该类应用退到后台后，iOS 系统的状态栏会变成红色，并在状态栏中显示正在使用麦克风的应用的名称。</p><p>AirPlay：AirPlay 是指将 iOS 设备，或者 Mac 设备上的音视频，同步到另一个设备中播放。举两个例子，第一个是把 iPhone 上的音乐通过蓝牙的方式在汽车的蓝牙音响播放，第二个是把 iPhone 上的视频，同步到智能电视屏幕上播放。此功能一般用于多端及多屏的交互。<br>关于 AirPlay 的开发文档：<a href>http://nto.github.io/AirPlay.html</a></p><p>画中画的视频播放：画中画是 iPad 版本的 iOS 9 新增加的功能，可以在 iOS 的桌面，或者其他应用的界面的上面播放视频，从而该视频区域所属的应用就可以后台运行了。此功能现在只在 iPad 应用中提供。<br>代码实现可参考：<a href>http://www.cocoachina.com/ios/20150714/12558.html</a></p><p>###Location updates<br>一般用于导航应用中，开启此选项后，应用退到后台，还可以得到系统的定位更新，从而使得应用可以根据定位的变化做出不同的反应。<br>代码实现可参考：<a href>https://github.com/voyage11/Location</a></p><p>###Voice over IP<br>VOIP 类的应用允许用户使用网络而不是手机打电话，因此这一类的应用需要保持同它相关的服务的网络连接，用以收到来电事件和其他数据。iOS 不是通过一直让该应用处于激活状态来达到这个目的，而是同样也会将这类的应用挂起，但同时会在应用被挂起期间由系统接管它的 VOIP 的 Socket，当这个 Socket 有数据通信时，系统会再次唤醒处于挂起状态的应用，同时将 Socket 的控制权交还给该应用，以让其正常的处理来电事件和其他数据。</p><p>###Newsstand downloads<br>在 iOS 开发中，有一类叫报刊杂志类应用比较特别，在 iOS 9 之前的系统中，此类应用会统一收在系统内置的「报刊杂志」应用中，在 iOS 9 中则去掉了内置的「报刊杂志」应用，此类应用得以以单独的图标入口出现在桌面中。<br>此后台运行的选项就是提供给报刊杂志类应用可以在后台下载及处理报刊杂志内容，而下载的过程需要使用 NewsstandKit 中的 NKAssetDownload 进行下载。需要注意的是，下载的过程中，应用可能还是会被挂起，甚至应用被退出，而 iOS 会在 Wi-Fi 环境下继续下载，直到下载完成。而一旦下载完成，如果应用只是被挂起，则 iOS 会唤醒对应的应用，回调对应的事件；如果应用已经退出，则会启动应用，在启动参数中会带上对应的标识表示这次启动是因为下载报刊杂志内容完成。<br>代码实现可参考：<a href>http://www.viggiosoft.com/blog/blog/2011/10/17/ios-newsstand-tutorial/</a></p><p>###External Accessory communication<br>此选项提供给一些 MFi 外设通过蓝牙，或者 Lightning 接头等方式与 iOS 设备连接，从而可在外设发送消息时，唤醒已经被挂起的应用。而一旦被唤醒，一般情况下， 应用只有最多 10 秒钟的执行时间。<br>MFi 外设：是指通过苹果 MFi 认证的设备，而 MFi 认证是对其授权配件厂商生产的外置配件的一种标识使用许可，是 Made for iOS 的英文缩写。</p><p>###Uses Bluetooth LE accessories<br>此选项与 External Accessory communication 类似，只是此选项无需限制 MFi 外设，而需要的是 Bluetooth LE 设备。</p><p>###Acts as a Bluetooth LE accessory<br>此选项是指 iOS 设备作为一个蓝牙外设连接时，对应的应用可以后台运行，但是使用此模式需要用户进行授权认证。</p><p>###Background fetch<br>iOS 7 新增加的一个选项，用于即使在后台，也需要频繁更新数据的应用。例如一个 PM2.5 的应用，需要几个小时更新一次数据，那么可以开启此选项，设置一个时间间隔，从而让 iOS 在间隔时间内在后台启动该应用，执行指定数据的获取工作，而此过程最多只能执行 30 秒钟。<br>代码实现可参考：<a href>http://objccn.io/issue-5-5/</a></p><p>###Remote notifications<br>iOS 7 新增加的一个选项，是一种静默推送，它有别于一般的推送，应用收到此类推送后，不会有任何的界面提示，而当应用退出或者挂起时收到此类推送，iOS 也会启动或者唤醒对应的应用。<br>例如一个阅读应用，用户订阅的博客更新了，那么可以先发一个静默推送，应用收到此种推送后，可以先把用户订阅的博客内容都下载好，再通知用户，这样用户一打开应用就可以马上开始阅读。<br>收到静默推送，会回调对应的回调方法，而此回调方法最多只能执行 30 秒钟。<br>代码实现可参考：<a href>http://objccn.io/issue-5-5/</a></p><p>###基于 NSURLSession 的后台传输<br>此为 iOS 7 新增加的特性，用于在后台下载或者上传大文件，步骤如下：创建后台传输用的 NSURLSession 对象；向这个对象中加入对应的传输的 NSURLSessionTask，并开始传输；在实现 AppDelegate 里实现 -application:handleEventsForBackgroundURLSession:completionHandler: 方法，以刷新 UI 及通知系统传输结束。<br>一旦后台传输的状态发生变化（包括正常结束和失败）的时候，应用将被唤醒并运行 AppDelegate 中的回调。<br>但是也有一些限制，后台传输只会通过 Wi-Fi 来进行。后台下载的时间与以前的关闭应用后X分钟的模式不一样，而是为了节省电力变为离散式的下载。<br>代码实现可以参考：<a href>http://onevcat.com/2013/08/ios7-background-multitask/</a></p><p>###其他后台运行操作</p><p>####一直循环播放一段没声音的音频<br>可以在后台选项中选择「Audio, AirPlay and Picture in Picture」，而开始循环播放一段是没声音的音频，即在 Audio Unit 回调函数中使用 kAudioUnitRenderAction_OutputIsSilence 标志位，但是这种方式两个大的缺点：</p><ol><li>苹果的审核人员如果发现，会被拒；</li><li>应用程序的 Audio Session 不能被打断。当应用执行在后台时，只要另一个应用使用 kAudioSessionCategory_RecordAndPlay （比如 Skype）或者 kAudioSessionCategory_SoloAmbientSound，那么该应用就会被立即打断。<br>代码实现可参考：<a href>https://github.com/marcop/MMPDeepSleepPreventer</a></li></ol><p>####越狱下开发 System 级别的应用<br>一般的应用都是 Mobile 级别的，在越狱的情况下，可以开发一个 System 级别的应用，从而使得应用不受 iOS 一般应用的限制，实现真正的后台运行，但是缺点就是应用只能运行在越狱设备上，也不能上 App Store。<br>代码实现可参考：<a href>http://www.cnblogs.com/doudouyoutang/p/4712331.html</a></p><p>####iOS BackgroundMode Documents参考链接:<br><a href>https://developer.apple.com/library/archive/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/BackgroundExecution/BackgroundExecution.html</a></p><p><a href="http://pv0t5k9bg.bkt.clouddn.com/238_writing_energy_efficient_apps.pdf" target="_blank" rel="noopener">238_writing_energy_efficient_apps</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;竞品-iOS-后台分析&quot;&gt;&lt;a href=&quot;#竞品-iOS-后台分析&quot; class=&quot;headerlink&quot; title=&quot;竞品 iOS 后台分析&quot;&gt;&lt;/a&gt;竞品 iOS 后台分析&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;####操作现象:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每次后台连接
+      
+    
+    </summary>
+    
+    
+      <category term="蓝牙 后台" scheme="https://github.com/jianxiongc/tags/%E8%93%9D%E7%89%99-%E5%90%8E%E5%8F%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>uni-app踩坑记录</title>
