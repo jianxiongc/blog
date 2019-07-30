@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Swift - 整数和浮点数 | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Swift">
+    <meta name="description" content="Swift - 整数和浮点数Swift 中 ，数字分为整数 （例如 ：1 / 10 / 100 /1000 等） 和浮点数 （ 例如 ： 3.14 / 1.44 / 2.71 等） 整形 - Int &amp;amp; UInt根据一个整形变量所占的内存空间 （8 / 16 / 32 /64-bit） 以及整数是否带有符号 （Unsinged） ， Swift 一共定义了8中不同类型的整数类型 :  In">
+<meta name="keywords" content="Swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift - 整数和浮点数">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="Swift - 整数和浮点数Swift 中 ，数字分为整数 （例如 ：1 / 10 / 100 /1000 等） 和浮点数 （ 例如 ： 3.14 / 1.44 / 2.71 等） 整形 - Int &amp;amp; UInt根据一个整形变量所占的内存空间 （8 / 16 / 32 /64-bit） 以及整数是否带有符号 （Unsinged） ， Swift 一共定义了8中不同类型的整数类型 :  In">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-07-30T12:35:09.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift - 整数和浮点数">
+<meta name="twitter:description" content="Swift - 整数和浮点数Swift 中 ，数字分为整数 （例如 ：1 / 10 / 100 /1000 等） 和浮点数 （ 例如 ： 3.14 / 1.44 / 2.71 等） 整形 - Int &amp;amp; UInt根据一个整形变量所占的内存空间 （8 / 16 / 32 /64-bit） 以及整数是否带有符号 （Unsinged） ， Swift 一共定义了8中不同类型的整数类型 :  In">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Swift - 整数和浮点数</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Swift - 整数和浮点数</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-30T12:34:22.000Z" itemprop="datePublished" class="page-time">
+  2019-07-30
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/学习笔记/">学习笔记</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Swift-整数和浮点数"><span class="post-toc-number">1.</span> <span class="post-toc-text">Swift - 整数和浮点数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整形-Int-amp-UInt"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">整形 - Int &amp; UInt</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#整数的常用表达方式"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">整数的常用表达方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浮点型-Float-amp-Double"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">浮点型 Float &amp; Double</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#和数字有关的-Type-Inference"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">和数字有关的 Type Inference</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="swift-Swift - 整数和浮点数"
+  class="post-article article-type-swift fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Swift - 整数和浮点数</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-30 20:34:22" datetime="2019-07-30T12:34:22.000Z"  itemprop="datePublished">2019-07-30</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/学习笔记/">学习笔记</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Swift-整数和浮点数"><a href="#Swift-整数和浮点数" class="headerlink" title="Swift - 整数和浮点数"></a>Swift - 整数和浮点数</h1><p>Swift 中 ，数字分为整数 （例如 ：1 / 10 / 100 /1000 等） 和浮点数 （ 例如 ： 3.14 / 1.44 / 2.71 等）</p>
+<h2 id="整形-Int-amp-UInt"><a href="#整形-Int-amp-UInt" class="headerlink" title="整形 - Int &amp; UInt"></a>整形 - Int &amp; UInt</h2><p>根据一个整形变量所占的内存空间 （8 / 16 / 32 /64-bit） 以及整数是否带有符号 （Unsinged） ， Swift 一共定义了8中不同类型的整数类型 :</p>
+<ul>
+<li>Int (8 / 16 / 32 / 64)</li>
+<li>UInt (8 / 16 / 32 / 64)</li>
+</ul>
+<p>Int 的四个类型 分别表示 8 / 16 / 32 /64-bit 的有符号整数<br>UInt 的四个类型分别代表 8 / 16 / 32 /64-bit 的无符号整数</p>
+<p>但在 Swift 中通常不会去指定具体的类型 ，Swift 编译器会根据目标编译平台 ，把 Int 或 UInt 转换成对应的整数。</p>
+<p>在64位平台上 ，可以分别使用 min 和 max 方法，来查看在64位机器上整数类型可以表达的数值范围: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Int.max    //9223372036854775807</span><br><span class="line">Int.min    //-9223372036854775808</span><br><span class="line"></span><br><span class="line">Int64.max  //9223372036854775807</span><br><span class="line">Int64.min  //-9223372036854775807</span><br><span class="line"></span><br><span class="line">Int32.max  //2147483647</span><br><span class="line">Int32.min  //-2147483648</span><br><span class="line"></span><br><span class="line">Int8.max   //127</span><br><span class="line">Int8.min   //-128</span><br><span class="line"></span><br><span class="line">Int16.max  //32767</span><br><span class="line">Int16.min  //-32768</span><br><span class="line"></span><br><span class="line">UInt.max   //9223372036854775807</span><br><span class="line">UInt.min   //0</span><br><span class="line"></span><br><span class="line">UInt64.max //9223372036854775807</span><br><span class="line">UInt64.min //0</span><br><span class="line"></span><br><span class="line">UInt32.max //4294967295</span><br><span class="line">UInt32.min //0</span><br><span class="line"></span><br><span class="line">UInt8.max  //255</span><br><span class="line">UInt8.min  //0</span><br></pre></td></tr></table></figure>
+
+<h2 id="整数的常用表达方式"><a href="#整数的常用表达方式" class="headerlink" title="整数的常用表达方式"></a>整数的常用表达方式</h2><p>在 Swift 里，我们可以用多种方式来表示一个整数。 包括使用 10 进制 、 16 进制  、 8 进制 、 2 进制: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let fifteenInDecimal = 10       //10</span><br><span class="line">let fiftennInHex = 0xff         //255</span><br><span class="line">let fifteenInOctal = 0o17       //15</span><br><span class="line">let fifteenInBinary = 0b0111    //7</span><br></pre></td></tr></table></figure>
+
+<p>以及可以在数字中使用分隔符 : </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let inDecimal = 10       //10</span><br><span class="line">let inHex = 0xff         //255</span><br><span class="line">let inOctal = 0o17       //15</span><br><span class="line">let inBinary = 0b0111    //7</span><br><span class="line"></span><br><span class="line">let million = 1_000_000  //1000000</span><br></pre></td></tr></table></figure>
+
+<p>除非我们所在硬件平台有特别明确的需求需要我们使用 <strong>UInt</strong> 来定义无符号整数 ， 否则我们应该尽可能使用 <strong>Int</strong> 来表达所有的整数类型 ， 哪怕我们确定一个整数一定是一个非负数。这会给我们减少很多不必要的类型转换的麻烦 。</p>
+<h2 id="浮点型-Float-amp-Double"><a href="#浮点型-Float-amp-Double" class="headerlink" title="浮点型 Float &amp; Double"></a>浮点型 Float &amp; Double</h2><p>在 Swift 中 ，根据可以表达的精度范围，有两种不同的浮点类型 : </p>
+<ul>
+<li><strong>Float</strong> : 最多表达6位精度的浮点数</li>
+<li><strong>Double</strong> : 至少可以表达15位精度的浮点数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let floatValue : Float = 1/3    //0.3333333</span><br><span class="line"></span><br><span class="line">let doubleValue : Double = 1/3  //0.3333333333333333</span><br></pre></td></tr></table></figure>
+
+<p>除了使用常规的十进制表达浮点数之外 , 我们还可以使用科学计数法 。 例如 ，表示浮点数 PI :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var PI = 0.314e1    //3.14</span><br></pre></td></tr></table></figure>
+
+<p>如果没有明确的需求，我们应该用Double来统一定义浮点数</p>
+<h2 id="和数字有关的-Type-Inference"><a href="#和数字有关的-Type-Inference" class="headerlink" title="和数字有关的 Type Inference"></a>和数字有关的 Type Inference</h2><p>在 Swift 中 ，我们使用一个整数 ， 编译器会将它推导为 <strong>Int</strong> ， 使用一个浮点数 ，编译器会将它编译成 <strong>Double</strong><br>使用 <strong>type(of:)</strong> 查看一个变量或者常量的类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let four = 5</span><br><span class="line">type(of: four)  //Int.Type</span><br><span class="line"></span><br><span class="line">let zeroPointFour = 0.5</span><br><span class="line">type(of: zeroPointFour) //Double.Type</span><br></pre></td></tr></table></figure>
+
+<p>在 Swift 中 ，可以对不同类型数字的字面量进行计算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let three = 2.8 + 0.2  //3</span><br><span class="line">type(of: three)        //Double.Type</span><br><span class="line"></span><br><span class="line">let four = 1 + 3       //4</span><br><span class="line">type(of: four)         //Int.Type</span><br></pre></td></tr></table></figure>
+
+<p>但是在 Swift 中 ，不能把不同数字类型的变量直接进行算术运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let zeroPointOne = 0.1;</span><br><span class="line">let one = 1;</span><br><span class="line"></span><br><span class="line">let onePointOne = zeroPointOne + one  //Binary operator &apos;+&apos; cannot be applied to operands of type &apos;Double&apos; and &apos;Int&apos;</span><br></pre></td></tr></table></figure>
+
+<p>当对变量进行算数运算的时候，所有变量的类型必须是相同的，如果变量类型不同，我们必须明确将其中的一些变量进行类型转换。像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let zeroPointOne = 0.1;</span><br><span class="line">let one = 1;</span><br><span class="line"></span><br><span class="line">let onePointOne = zeroPointOne + Double(one)  //1.1</span><br></pre></td></tr></table></figure>
+
+<p>通过 Double(value) 重新初始化了一个 Double 类型的 one 。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-30T12:35:09.845Z" itemprop="dateUpdated">2019-07-30 20:35:09</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/07/30/Swift - 整数和浮点数/" target="_blank" rel="external">https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Swift/">Swift</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/&title=《Swift - 整数和浮点数》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/&title=《Swift - 整数和浮点数》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Swift - 整数和浮点数》 — Jianxiong&url=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/07/24/iOS后台分析/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">蓝牙后台分析</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/&title=《Swift - 整数和浮点数》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/&title=《Swift - 整数和浮点数》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Swift - 整数和浮点数》 — Jianxiong&url=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/07/30/Swift - 整数和浮点数/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3aQXLCMAwFUO5/6XbbDk34kqyWzjxWDITEzwtb6PvxiF8fF6+v3ybv7+9zdeXz3Q6/8PDw8A4NPR/c1UDvwc93rk5oNAY8PDy8Nd5kWFcPTgaaPKt3DR4eHt778O5L22RSqsPNy2s8PDy8d+blTYfqoKstDzw8PLy/4p26df5tdbNZ77Xg4eHh1XqtUYr0Pu9X8j08PDy8caqeF75RaRvEXZPN4IdR4eHh4S3w8gW3elBg3mLolct4eHh427x5zD8PwPJBJ9P37Xo8PDy8Bd7kYFMVn8CSwjqfaDw8PLxt3v0j7z/Pr8lL9t4xhRdbAh4eHt4Cr7rgTgL7vLxOSvMDOx4eHh5ePNpqiVyNxPLr51HcZZcaDw8P7xCvugHM195qDFaN6Jq9Cjw8PLwWr3mkqRh05ccI8nbG5bd4eHh4C7xq1JS0WfMNYBK/5ccI8PDw8DZ4SbxUbUwkUdmkEC+MEw8PD+8or7rQ54t4r+mQT3fUsMDDw8Nb4PXK3F7c1fv2wOEDPDw8vKO8ZGnOB9G7ZrLxvOjW4uHh4S3wqg3cSVTWe18t1vHw8PC2edVW6amwKm8x5K/myQg8PDy8Bd58Ea+W7HnYFgVgeHh4eEd5vdCrED61gv/eHR7Jj/Hw8PAO8arlb17UTu7QC8OilA8PDw9vzMuH1VvWJyV4s4zuzToeHh7egNdr9eYbTPKUfLpfTDQeHh7eGq/XWi20Aw79qpmM4eHh4S3AqsenkjBsfnAq32Yu8z08PDy8o7z55lHdYCaHD5L3h/dGPDw8vFbl2WsxTLaHXmsjOnSFh4eHd5TXa63Ot5MquDpOPDw8vHfgVY9eJQ2IyeTi4eHh/RfexidJ/Jb8AcDDw8P7HV4v9Oo1EfJ2cA+Ph4eHt82b/OGvLtPlZb1YuI/yPTw8PLzX138Cun3FOm4l97YAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
