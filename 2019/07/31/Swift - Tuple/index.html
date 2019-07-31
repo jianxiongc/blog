@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Swift-Tuple | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Swift">
+    <meta name="description" content="Swift - Tuple相比于 Objective-C ，Swift 提供了一种新的类型 Tuple ， Tuple可以创建一组不同类型的集合。 例如需要返回一个 HTTP 状态信息 :   状态码 : 200 ; 状态消息 : SUCCESS 状态码 : 404 ; 状态消息 : File not found  定义一个 Tuple定义一个 HTTP 状态消息 1234//: #### Def">
+<meta name="keywords" content="Swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift-Tuple">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/07/31/Swift - Tuple/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="Swift - Tuple相比于 Objective-C ，Swift 提供了一种新的类型 Tuple ， Tuple可以创建一组不同类型的集合。 例如需要返回一个 HTTP 状态信息 :   状态码 : 200 ; 状态消息 : SUCCESS 状态码 : 404 ; 状态消息 : File not found  定义一个 Tuple定义一个 HTTP 状态消息 1234//: #### Def">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-07-31T09:16:34.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift-Tuple">
+<meta name="twitter:description" content="Swift - Tuple相比于 Objective-C ，Swift 提供了一种新的类型 Tuple ， Tuple可以创建一组不同类型的集合。 例如需要返回一个 HTTP 状态信息 :   状态码 : 200 ; 状态消息 : SUCCESS 状态码 : 404 ; 状态消息 : File not found  定义一个 Tuple定义一个 HTTP 状态消息 1234//: #### Def">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Swift-Tuple</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Swift-Tuple</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-31T09:11:40.000Z" itemprop="datePublished" class="page-time">
+  2019-07-31
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Swift学习笔记/">Swift学习笔记</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Swift-Tuple"><span class="post-toc-number">1.</span> <span class="post-toc-text">Swift - Tuple</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义一个-Tuple"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">定义一个 Tuple</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Tuple-Decomposition"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Tuple Decomposition</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Tuple-Type"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Tuple Type</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Tuple-comparison"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Tuple comparison</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Swift - Tuple"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Swift-Tuple</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-31 17:11:40" datetime="2019-07-31T09:11:40.000Z"  itemprop="datePublished">2019-07-31</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Swift学习笔记/">Swift学习笔记</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Swift-Tuple"><a href="#Swift-Tuple" class="headerlink" title="Swift - Tuple"></a>Swift - Tuple</h1><p>相比于 Objective-C ，Swift 提供了一种新的类型 <strong>Tuple</strong> ， Tuple可以创建一组不同类型的集合。</p>
+<p>例如需要返回一个 HTTP 状态信息 : </p>
+<ul>
+<li>状态码 : 200 ; 状态消息 : SUCCESS</li>
+<li>状态码 : 404 ; 状态消息 : File not found</li>
+</ul>
+<h2 id="定义一个-Tuple"><a href="#定义一个-Tuple" class="headerlink" title="定义一个 Tuple"></a>定义一个 Tuple</h2><p>定义一个 HTTP 状态消息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//: #### Define a tuple</span><br><span class="line"></span><br><span class="line">let success = (200 ,&quot;SUCCESS&quot;)          //(.0 200, .1 &quot;SUCCESS&quot;)</span><br><span class="line">let fail = (404 ,&quot;File not found&quot;)      //(.0 404, .1 &quot;File not found&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>定义一个指定命名的Tuple</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let userInfo = (name: &quot;jianxiong&quot;, age: 22, email: &quot;jianxiong1997@gmail.com&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>定义好之后 ，就可以通过下面的方式访问 Tuple 中的数据成员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">success.0           //200</span><br><span class="line">success.1           //&quot;SUCCESS&quot;</span><br><span class="line"></span><br><span class="line">fail.0              //404</span><br><span class="line">fail.1              //&quot;File not found&quot;</span><br><span class="line"></span><br><span class="line">userInfo.name       //&quot;jianxiong&quot;</span><br><span class="line">userInfo.age        //22</span><br><span class="line">userInfo.email      //&quot;jianxiong1997@gmail.com&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Tuple-Decomposition"><a href="#Tuple-Decomposition" class="headerlink" title="Tuple Decomposition"></a>Tuple Decomposition</h2><p>把一个 Tuple 的值 ，一一拆分到不同的变量上 ，叫做 Tuple Decomposition 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//: #### Tuple Decomposition</span><br><span class="line">let (successCode, successMessage) = success</span><br><span class="line">print(successCode)          //200</span><br><span class="line">print(successMessage)       //SUCCESS</span><br></pre></td></tr></table></figure>
+
+<p>这里使用success 构建了一个新的 Tuple ，因此修改 successCode 和 successMessage 都不会对原有的 success 产生影响</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">successCode = 201</span><br><span class="line">successMessage = &quot;Created&quot;</span><br><span class="line">print(successCode)          //201</span><br><span class="line">print(successMessage)       //Created</span><br><span class="line">print(success)              //(200, &quot;SUCCESS&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>如果只是想要对应到 Tuple 中特定的成员 ，忽略其他成员 ， 可以采用 _ 来表示忽略的成员 ， 例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let (_ ,errorMessage) = fail</span><br><span class="line">print(errorMessage)         //&quot;File not found&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Tuple-Type"><a href="#Tuple-Type" class="headerlink" title="Tuple Type"></a>Tuple Type</h2><p>每一个 Tuple 的类型 ， 都是有 Tuple 中所有成员决定的 。 例如 success 的类型 就是 (Int ,String) 。 当我们需要用 Type annotation 定义一个 Tuple 时 ， 我们可以这样写。这里不能通过指定命名来取值了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var airPodsInfo:(String ,Double ,String) = (name: &quot;商品名称&quot; ,money: 1168.8 ,mode: &quot;A2031&quot;)</span><br><span class="line">airPodsInfo.0       //&quot;商品名称&quot;</span><br><span class="line">airPodsInfo.1       //1168.8</span><br><span class="line">airPodsInfo.2       //A2031</span><br></pre></td></tr></table></figure>
+
+<h2 id="Tuple-comparison"><a href="#Tuple-comparison" class="headerlink" title="Tuple comparison"></a>Tuple comparison</h2><p>当我们比较两个Tuple类型的变量时，要遵循下面的规则：</p>
+<p>首先，只有元素个数相同的Tuple变量之间，才能进行比较。例如，下面的代码会引发编译错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let tuple1 = (1,2,3)</span><br><span class="line">let tuple2 = (1,2)</span><br><span class="line"></span><br><span class="line">tuple1 &gt; tuple2  //Binary operator &apos;&gt;&apos; cannot be applied to operands of type &apos;(Int, Int, Int)&apos; and &apos;(Int, Int)&apos;</span><br></pre></td></tr></table></figure>
+
+<p>从上面的结果就能看到，包含两个Int的Tuple不能和包含三个Int的Tuple进行比较。<br>其次，当Tuple中元素个数相同时，比较是按照Tuple中元素的位置从前向后依次进行的：</p>
+<ul>
+<li>如果Tuple中，相同位置的两个元素相等，则继续比较下一个位置的两个元素，并根据第一个同一位置不相等的两个元素的大小关系，确定两个Tuple变量的关系；</li>
+<li>如果两个Tuple中所有位置的元素都相等，则两个Tuple变量相等；</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let tuple1 = (1,3)</span><br><span class="line">let tuple2 = (1,2)</span><br><span class="line"></span><br><span class="line">tuple1 &gt; tuple2  //true</span><br></pre></td></tr></table></figure>
+
+<p>需要注意下 tuple 最多包含6个元素的Tuple变量进行比较，超过这个数量，Swift会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let tuple1 = (1,3,34,123,135,244,2)</span><br><span class="line">let tuple2 = (1,2,21,421,123,232,4)</span><br><span class="line"></span><br><span class="line">tuple1 &gt; tuple2  //Binary operator &apos;&gt;&apos; cannot be applied to two &apos;(Int, Int, Int, Int, Int, Int, Int)&apos; operands</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-07-31T09:16:34.397Z" itemprop="dateUpdated">2019-07-31 17:16:34</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/07/31/Swift - Tuple/" target="_blank" rel="external">https://github.com/jianxiongc/2019/07/31/Swift - Tuple/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Swift/">Swift</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/&title=《Swift-Tuple》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/&title=《Swift-Tuple》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Swift-Tuple》 — Jianxiong&url=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/07/30/Swift - 整数和浮点数/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Swift - 整数和浮点数</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/&title=《Swift-Tuple》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/&title=《Swift-Tuple》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Swift-Tuple》 — Jianxiong&url=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/07/31/Swift - Tuple/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aS07DQBAFwNz/0kZihQQk7/WYII9rViixY8qLVv8ej/gcn+f7J18/P345+S/ndw0PBgbGZRnH05M87Pn1z/E57MULwsDAuAFj9nNtJEzY+evAwMDAyB+Th2kMDAyMdwbcthDFwMDAWGckoTP/PEkN8+B+ci2OgYFxQUY7GHjn338438DAwLgI4yhP20RrB5bH6GBgYOzNSBK1JOy2qxLr1GIfBAMD4+KMNvzl7DzVa1t1J0RxDAyMSzHaVn4SWJNvV0J21DXEwMDYiJEUqPmP5utf7YDhxZUYGBhbM9pGfJ7ktf38/CViYGDck9GWrLOHtYlmvsaBgYGxNyO/ub2yHRK0S2M/ZLgYGBibMvLm2ixxnP2LSy0/DAyM7RizBK5dGpuNM/PEFAMDY29GEhyLOnghgK4EcQwMjL0ZK6Vmkvy1bbV2+ePFJBYDA2MjRn7zSuhcWeYoZrAYGBjbMaJwNmqcrc9UlyaxGBgY2zGSS/Mksj1LSWFepGNgYFyW0RaxSdN/VsTORqQYGBj3YeQt+LxllgTr2SgiqsUxMDA2YhT54+gxybrGStite4cYGBgXZBzlmTXr22+TMI2BgXEfxqwpNksr2wWOfFyBgYFxB0YbZHNG0TI7awaLgYGxNWM2DJjF75OrcAwMDIwyvK5QZ606DAwMjJVEcLaoMRx2YmBg3ICRDyDPCruzjmC0h4uBgbEdY30wMBsJ/AMGAwPjeowPL7gNyzM9UtIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
