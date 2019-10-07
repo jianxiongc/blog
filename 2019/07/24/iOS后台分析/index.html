@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="蓝牙 后台">
-    <meta name="description" content="蓝牙 iOS 后台分析 操作现象: 每次后台连接上蓝牙之后可以进行操作 摇一摇。 连接上会接收到通知提醒 断开会接收到通知提醒 断连重连都是OK的 只有在蓝牙连接时才计算后台时间  其他产品申请的权限 通知 位置 无线数据 麦克风  其他产品的后台数据: 7:41 开启 App 手机 100% 电量 8:54 查看 App 手机 75%  电量  App占比9%  3分钟前台 24分钟后台 第二天">
+    <meta name="description" content="蓝牙 iOS 后台分析 iOS支持的后台方式:Audio, AirPlay and Picture in Picture此个选项包含四种场景，分别是：音频的播放，录音，AirPlay 及画中画的视频播放。音频的播放：在播放音频时，即使应用退到后台，只要一直有音频在播放，那应用就可以一直在后台运行。 代码实现可参考：http://www.linuxidc.com/Linux/2012-08/6836">
 <meta name="keywords" content="蓝牙 后台">
 <meta property="og:type" content="article">
 <meta property="og:title" content="蓝牙后台分析">
 <meta property="og:url" content="https://github.com/jianxiongc/2019/07/24/iOS后台分析/index.html">
 <meta property="og:site_name" content="Jianxiong">
-<meta property="og:description" content="蓝牙 iOS 后台分析 操作现象: 每次后台连接上蓝牙之后可以进行操作 摇一摇。 连接上会接收到通知提醒 断开会接收到通知提醒 断连重连都是OK的 只有在蓝牙连接时才计算后台时间  其他产品申请的权限 通知 位置 无线数据 麦克风  其他产品的后台数据: 7:41 开启 App 手机 100% 电量 8:54 查看 App 手机 75%  电量  App占比9%  3分钟前台 24分钟后台 第二天">
+<meta property="og:description" content="蓝牙 iOS 后台分析 iOS支持的后台方式:Audio, AirPlay and Picture in Picture此个选项包含四种场景，分别是：音频的播放，录音，AirPlay 及画中画的视频播放。音频的播放：在播放音频时，即使应用退到后台，只要一直有音频在播放，那应用就可以一直在后台运行。 代码实现可参考：http://www.linuxidc.com/Linux/2012-08/6836">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-24T02:33:17.687Z">
+<meta property="og:updated_time" content="2019-10-07T11:55:20.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="蓝牙后台分析">
-<meta name="twitter:description" content="蓝牙 iOS 后台分析 操作现象: 每次后台连接上蓝牙之后可以进行操作 摇一摇。 连接上会接收到通知提醒 断开会接收到通知提醒 断连重连都是OK的 只有在蓝牙连接时才计算后台时间  其他产品申请的权限 通知 位置 无线数据 麦克风  其他产品的后台数据: 7:41 开启 App 手机 100% 电量 8:54 查看 App 手机 75%  电量  App占比9%  3分钟前台 24分钟后台 第二天">
+<meta name="twitter:description" content="蓝牙 iOS 后台分析 iOS支持的后台方式:Audio, AirPlay and Picture in Picture此个选项包含四种场景，分别是：音频的播放，录音，AirPlay 及画中画的视频播放。音频的播放：在播放音频时，即使应用退到后台，只要一直有音频在播放，那应用就可以一直在后台运行。 代码实现可参考：http://www.linuxidc.com/Linux/2012-08/6836">
     
         <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
     
@@ -165,7 +165,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#蓝牙-iOS-后台分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">蓝牙 iOS 后台分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#操作现象"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">操作现象:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#其他产品申请的权限"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">其他产品申请的权限</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#其他产品的后台数据"><span class="post-toc-number">1.0.0.3.</span> <span class="post-toc-text">其他产品的后台数据:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#根据操作分析"><span class="post-toc-number">1.0.0.4.</span> <span class="post-toc-text">根据操作分析:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#依靠系统蓝牙调起App的方式实现降低功耗的行为。"><span class="post-toc-number">1.0.0.4.1.</span> <span class="post-toc-text">依靠系统蓝牙调起App的方式实现降低功耗的行为。</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">参考</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iOS支持的后台方式"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">iOS支持的后台方式:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Audio-AirPlay-and-Picture-in-Picture"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">Audio, AirPlay and Picture in Picture</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Location-updates"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">Location updates</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Voice-over-IP"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">Voice over IP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Newsstand-downloads"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">Newsstand downloads</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#External-Accessory-communication"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">External Accessory communication</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Uses-Bluetooth-LE-accessories"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">Uses Bluetooth LE accessories</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Acts-as-a-Bluetooth-LE-accessory"><span class="post-toc-number">1.1.8.</span> <span class="post-toc-text">Acts as a Bluetooth LE accessory</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Background-fetch"><span class="post-toc-number">1.1.9.</span> <span class="post-toc-text">Background fetch</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Remote-notifications"><span class="post-toc-number">1.1.10.</span> <span class="post-toc-text">Remote notifications</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基于-NSURLSession-的后台传输"><span class="post-toc-number">1.1.11.</span> <span class="post-toc-text">基于 NSURLSession 的后台传输</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他后台运行操作"><span class="post-toc-number">1.1.12.</span> <span class="post-toc-text">其他后台运行操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一直循环播放一段没声音的音频"><span class="post-toc-number">1.1.12.1.</span> <span class="post-toc-text">一直循环播放一段没声音的音频</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#越狱下开发-System-级别的应用"><span class="post-toc-number">1.1.12.2.</span> <span class="post-toc-text">越狱下开发 System 级别的应用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iOS-BackgroundMode-Documents参考链接"><span class="post-toc-number">1.1.12.3.</span> <span class="post-toc-text">iOS BackgroundMode Documents参考链接:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iOS-能耗参考"><span class="post-toc-number">1.1.12.4.</span> <span class="post-toc-text">iOS 能耗参考:</span></a></li></ol></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#蓝牙-iOS-后台分析"><span class="post-toc-number">1.</span> <span class="post-toc-text">蓝牙 iOS 后台分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iOS支持的后台方式"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">iOS支持的后台方式:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Audio-AirPlay-and-Picture-in-Picture"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Audio, AirPlay and Picture in Picture</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Location-updates"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">Location updates</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Voice-over-IP"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">Voice over IP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Newsstand-downloads"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">Newsstand downloads</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#External-Accessory-communication"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">External Accessory communication</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Uses-Bluetooth-LE-accessories"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">Uses Bluetooth LE accessories</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Acts-as-a-Bluetooth-LE-accessory"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">Acts as a Bluetooth LE accessory</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Background-fetch"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">Background fetch</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Remote-notifications"><span class="post-toc-number">1.0.10.</span> <span class="post-toc-text">Remote notifications</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基于-NSURLSession-的后台传输"><span class="post-toc-number">1.0.11.</span> <span class="post-toc-text">基于 NSURLSession 的后台传输</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他后台运行操作"><span class="post-toc-number">1.0.12.</span> <span class="post-toc-text">其他后台运行操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一直循环播放一段没声音的音频"><span class="post-toc-number">1.0.12.1.</span> <span class="post-toc-text">一直循环播放一段没声音的音频</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#越狱下开发-System-级别的应用"><span class="post-toc-number">1.0.12.2.</span> <span class="post-toc-text">越狱下开发 System 级别的应用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iOS-BackgroundMode-Documents参考链接"><span class="post-toc-number">1.0.12.3.</span> <span class="post-toc-text">iOS BackgroundMode Documents参考链接:</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iOS-能耗参考"><span class="post-toc-number">1.0.12.4.</span> <span class="post-toc-text">iOS 能耗参考:</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -190,42 +190,6 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h1 id="蓝牙-iOS-后台分析"><a href="#蓝牙-iOS-后台分析" class="headerlink" title="蓝牙 iOS 后台分析"></a>蓝牙 iOS 后台分析</h1><hr>
-<h4 id="操作现象"><a href="#操作现象" class="headerlink" title="操作现象:"></a>操作现象:</h4><ul>
-<li>每次后台连接上蓝牙之后可以进行操作 摇一摇。</li>
-<li>连接上会接收到通知提醒</li>
-<li>断开会接收到通知提醒</li>
-<li>断连重连都是OK的</li>
-<li>只有在蓝牙连接时才计算后台时间</li>
-</ul>
-<h4 id="其他产品申请的权限"><a href="#其他产品申请的权限" class="headerlink" title="其他产品申请的权限"></a>其他产品申请的权限</h4><ul>
-<li>通知</li>
-<li>位置</li>
-<li>无线数据</li>
-<li>麦克风</li>
-</ul>
-<h4 id="其他产品的后台数据"><a href="#其他产品的后台数据" class="headerlink" title="其他产品的后台数据:"></a>其他产品的后台数据:</h4><ul>
-<li>7:41 开启 App 手机 100% 电量</li>
-<li>8:54 查看 App 手机 75%  电量  App占比9%  3分钟前台 24分钟后台</li>
-<li>第二天9:00 查看 App 手机 45电量 App占比11% 3分钟前台 29分钟后台</li>
-</ul>
-<hr>
-<blockquote>
-<h4 id="根据操作分析"><a href="#根据操作分析" class="headerlink" title="根据操作分析:"></a>根据操作分析:</h4></blockquote>
-<p>开启相机 音乐 等打断无声音乐的操作 并没有受到干扰<br> <strong>不是无声音乐保活</strong></p>
-<p>关闭通知和麦克风的权限 后台尝试连接蓝牙操作 可以正常操作 所以不可能是通知或者麦克风保活<br> <strong>不是通知或者麦克风保活</strong></p>
-<p>关闭地理位置权限 后台尝试连接蓝牙操作 可以正常操作 所以不可能是地理位置后台保活<br> <strong>不是地理位置保活</strong></p>
-<blockquote>
-<p>其他产品的现象为:</p>
-</blockquote>
-<p>连接蓝牙 -&gt; 开启保活<br>断开蓝牙 -&gt; 关闭保活</p>
-<p>这种保活方式 能最大程度的节省电量 即不连接不计后台时间。</p>
-<p>这种保活方式 是主要是依靠 iOS 系统的蓝牙连接来调用App的代码来实现。</p>
-<h5 id="依靠系统蓝牙调起App的方式实现降低功耗的行为。"><a href="#依靠系统蓝牙调起App的方式实现降低功耗的行为。" class="headerlink" title="依靠系统蓝牙调起App的方式实现降低功耗的行为。"></a>依靠系统蓝牙调起App的方式实现降低功耗的行为。</h5><p>优势:功耗极大的降低了。<br>缺陷:当系统内存不足时 会被回收且无法接收到系统通知。导致PKE无法正常使用。</p>
-<p> <strong>和其他产品对比存在的不同</strong></p>
-<p>蓝牙配对能否保证App在后台的存活。及当内存不足时能否保活</p>
-<hr>
-<blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2></blockquote>
 <h3 id="iOS支持的后台方式"><a href="#iOS支持的后台方式" class="headerlink" title="iOS支持的后台方式:"></a>iOS支持的后台方式:</h3><h3 id="Audio-AirPlay-and-Picture-in-Picture"><a href="#Audio-AirPlay-and-Picture-in-Picture" class="headerlink" title="Audio, AirPlay and Picture in Picture"></a><strong>Audio, AirPlay and Picture in Picture</strong></h3><p>此个选项包含四种场景，分别是：音频的播放，录音，AirPlay 及画中画的视频播放。<br>音频的播放：在播放音频时，即使应用退到后台，只要一直有音频在播放，那应用就可以一直在后台运行。</p>
 <p>代码实现可参考：<a href>http://www.linuxidc.com/Linux/2012-08/68364.htm</a></p>
 <p>录音：应用可以请求使用麦克风，而当开启了此后台选项，应用在使用麦克风的时候，即使退到后台，也可以一直后台运行，通过查看微信安装包中的 plist 文件，微信的语音聊天，就是通过这种方式实现的。而当该类应用退到后台后，iOS 系统的状态栏会变成红色，并在状态栏中显示正在使用麦克风的应用的名称。</p>
@@ -256,7 +220,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-07-24T02:33:17.687Z" itemprop="dateUpdated">2019-07-24 10:33:17</time>
+    Last updated: <time datetime="2019-10-07T11:55:20.079Z" itemprop="dateUpdated">2019-10-07 19:55:20</time>
 </span><br>
 
 
