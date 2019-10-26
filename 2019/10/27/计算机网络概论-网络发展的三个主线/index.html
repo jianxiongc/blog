@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>计算机网络概论 - 网络发展的三个主线 | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="计算机科学与技术">
+    <meta name="description" content="计算机网络概论-网络发展的三个主线1. 从 ARPANET 到 InternetARPANET的研究奠定互联网发展的基础，而联系二者的是TCP/IP协议。 在从ARPANET演变到互联网的过程中，强烈的社会需求促进广域网、城域网与局域网技术的研究与应用的发展，而广域网、城域网与局域网技术的成熟与标准化，又加速了互联网的发展进程。 与传统的客户/服务器（C/S）工作模式不同，对等（P2P）工作模式淡">
+<meta name="keywords" content="计算机科学与技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络概论 - 网络发展的三个主线">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="计算机网络概论-网络发展的三个主线1. 从 ARPANET 到 InternetARPANET的研究奠定互联网发展的基础，而联系二者的是TCP/IP协议。 在从ARPANET演变到互联网的过程中，强烈的社会需求促进广域网、城域网与局域网技术的研究与应用的发展，而广域网、城域网与局域网技术的成熟与标准化，又加速了互联网的发展进程。 与传统的客户/服务器（C/S）工作模式不同，对等（P2P）工作模式淡">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-26T16:43:50.418Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络概论 - 网络发展的三个主线">
+<meta name="twitter:description" content="计算机网络概论-网络发展的三个主线1. 从 ARPANET 到 InternetARPANET的研究奠定互联网发展的基础，而联系二者的是TCP/IP协议。 在从ARPANET演变到互联网的过程中，强烈的社会需求促进广域网、城域网与局域网技术的研究与应用的发展，而广域网、城域网与局域网技术的成熟与标准化，又加速了互联网的发展进程。 与传统的客户/服务器（C/S）工作模式不同，对等（P2P）工作模式淡">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">计算机网络概论 - 网络发展的三个主线</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">计算机网络概论 - 网络发展的三个主线</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-26T16:43:59.000Z" itemprop="datePublished" class="page-time">
+  2019-10-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机网络与概论/">计算机网络与概论</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计算机网络概论-网络发展的三个主线"><span class="post-toc-number">1.</span> <span class="post-toc-text">计算机网络概论-网络发展的三个主线</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-从-ARPANET-到-Internet"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1. 从 ARPANET 到 Internet</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-从无线分组网到无线自组网、无线传感器网络的无线网络技术"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2. 从无线分组网到无线自组网、无线传感器网络的无线网络技术</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-网络安全技术"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">3. 网络安全技术</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-计算机网络概论-网络发展的三个主线"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">计算机网络概论 - 网络发展的三个主线</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-27 00:43:59" datetime="2019-10-26T16:43:59.000Z"  itemprop="datePublished">2019-10-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机网络与概论/">计算机网络与概论</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="计算机网络概论-网络发展的三个主线"><a href="#计算机网络概论-网络发展的三个主线" class="headerlink" title="计算机网络概论-网络发展的三个主线"></a>计算机网络概论-网络发展的三个主线</h1><h3 id="1-从-ARPANET-到-Internet"><a href="#1-从-ARPANET-到-Internet" class="headerlink" title="1. 从 ARPANET 到 Internet"></a>1. 从 ARPANET 到 Internet</h3><p>ARPANET的研究奠定互联网发展的基础，而联系二者的是TCP/IP协议。</p>
+<p>在从ARPANET演变到互联网的过程中，强烈的社会需求促进广域网、城域网与局域网技术的研究与应用的发展，而广域网、城域网与局域网技术的成熟与标准化，又加速了互联网的发展进程。</p>
+<p>与传统的客户/服务器（C/S）工作模式不同，对等（P2P）工作模式淡化了服务提供者与服务使用者的界限，从而达到进一步扩大网络资源共享范围和深度，提高网络资源利用率，达到信息共享最大化的目的。</p>
+<p>新的基于P2P网络应用不断出现，成为21世纪网络应用重要的研究方向之一。</p>
+<p>随着互联网的广泛应用，计算机网络、电信网络与有线电视网络从结构、技术到服务领域正在快速地融合，成为21世纪信息产业发展最具活力的领域。</p>
+<h3 id="2-从无线分组网到无线自组网、无线传感器网络的无线网络技术"><a href="#2-从无线分组网到无线自组网、无线传感器网络的无线网络技术" class="headerlink" title="2. 从无线分组网到无线自组网、无线传感器网络的无线网络技术"></a>2. 从无线分组网到无线自组网、无线传感器网络的无线网络技术</h3><p>无线网络可以分为基于基础设施与无基础设施的两类。802.11<strong>无线局域网</strong>（WLAN）与802.16<strong>无线城域网</strong>（WMAN）属于需要基础设施的一类无线网络。</p>
+<p>无线自组网、无线传感器网络属于不需要基础设施的另一类无线网络。</p>
+<p>在无线分组网的基础上发展起来的<strong>无线自组网</strong>（Ad hoc）是一种特殊的自组织、对等式、多跳、无线移动网络，它是军事、特殊应用领域有着重要的应用前景。</p>
+<p>无线网状网（WMN）是无线自组网在接入领域的一种应用。</p>
+<p>当无线自组网技术日趋成熟的时候，无线通信、微电子、传感器技术得到快速发展。在军事领域中，人们提出将无线自组网与传感器技术相结合的无线传感器网络技术研究。</p>
+<p>无线传感器网络（WSN）被评价为“21世纪最有影响的21项技术之一”和“改变世界的十大技术之首”。</p>
+<p>如果说广域网作用是扩大信息社会中资源共享的范围，局域网是进一步增强信息社会中资源共享的深度，无线网络增强人类共享信息资源的灵活性，那么无线传感器网络将会改变人类与自然界的交互方式，它将极大地扩展现有网络的功能和人类认识世界的能力。</p>
+<h3 id="3-网络安全技术"><a href="#3-网络安全技术" class="headerlink" title="3. 网络安全技术"></a>3. 网络安全技术</h3><p>人类创造了网络虚拟社会的繁荣，也是人类制造了网络虚拟社会的麻烦。</p>
+<p>现实社会对网络技术依赖的程度越高，网络安全技术就越显得重要。网络安全是网络技术研究中一个永恒的主题。</p>
+<p>在“攻击—防御—新攻击—新防御”的循环中，网络攻击技术与网络反攻击技术相互影响、相互制约，共同发展，这个过程将一直延续下去。</p>
+<p>从当前的发展趋势看，网络安全问题已超出技术和传统意义上计算机犯罪的范畴，已发展成为国家之间一种政治与军事的手段。</p>
+<p>各国只能立足于自身，研究网络安全技术，培养专门人才，发展网络安全产业，构筑网络与信息安全保障体系。</p>
+<p><strong>计算机网络的定义：</strong></p>
+<pre><code>以能够相互共享资源的方式互联起来的自治计算机系统的集合。</code></pre><p>计算机网络的基本特征 :</p>
+<pre><code>1. 计算机网络建立的目的是实现计算机资源的共享。
+
+2. 互联的计算机是分布在不同地理位置的多台独立的“自治计算机系统”。
+
+3. 联网计算机之间的通信必须遵循共同的网络协议。</code></pre><p><strong>计算机网络的分类</strong></p>
+<p>计算机网络分类的方法 :</p>
+<pre><code>1. 按网络采用的传输技术分类
+
+2. 按网络覆盖的地理范围分类</code></pre><p>按传输技术分类 :</p>
+<pre><code>1. 广播通信信道—广播网络
+
+2. 点-点通信信道—点-点网络</code></pre><p>按照覆盖的地理范围进行分类 :</p>
+<pre><code>1. 局域网
+
+2. 城域网
+
+3. 广域网</code></pre><p>局域网（LAN）的基本特征 :</p>
+<pre><code>局域网用于将有限范围内（例如一个实验室、一幢大楼、一个校园）的各种计算机、终端与外部设备互联成网；
+
+局域网可以分为共享局域网与交换局域网；</code></pre><p>城域网（MAN）的基本特征 :</p>
+<pre><code>城域网的设计目标是要满足几十公里范围内的大量企业、机关、公司的多个局域网互联的需求，以实现大量用户之间的数据、语音、图形与视频等多种信息的传输。
+
+宽带城域网的概念逐渐取代传统意义上的城域网。</code></pre><p>广域网（WAN）的基本特征 :</p>
+<pre><code>广域网覆盖的地理范围从几十公里到几千公里；
+
+广域网可以是覆盖一个国家、地区，或横跨几个洲；
+
+广域网将分布在不同地区的宽带城域网或计算机系统互联起来，提供各种网络服务，实现信息资源共享。</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-10-26T16:43:50.418Z" itemprop="dateUpdated">2019-10-27 00:43:50</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/10/27/计算机网络概论-网络发展的三个主线/" target="_blank" rel="external">https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/计算机科学与技术/">计算机科学与技术</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/&title=《计算机网络概论 - 网络发展的三个主线》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/&title=《计算机网络概论 - 网络发展的三个主线》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络概论 - 网络发展的三个主线》 — Jianxiong&url=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/10/21/计算机网络概论-计算机发展的四个阶段/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">No title</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/&title=《计算机网络概论 - 网络发展的三个主线》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/&title=《计算机网络概论 - 网络发展的三个主线》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络概论 - 网络发展的三个主线》 — Jianxiong&url=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/10/27/计算机网络概论-网络发展的三个主线/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADL0lEQVR42u3awW7CQAwE0P7/T9NrpRY6400l4r6cEIQkbzmYHfvjIz4eX46v73x/fe11vp+ff3rBgY2NjX0T9uPl8foGr885ef16QZPnfHYONjY29lb2s0u35SopKgkvv07ybNjY2NjYSek6KWyzMpb/JNjY2NjYs9ioLWPJdqJdMmxsbOz/w05u8Pr8tiC1RbEth5dladjY2Nhvz87L0vu//pP+NjY2NvYbsx/lcR76zDYhSdkrFNjY2NiL2HkBuHZk5+TTZCGi58fGxsZexG5DnHy78vq77af5+E4RJGFjY2MvYudbiLwxfNJUaIOtYhOCjY2NvYjd/t1PVjEfmml/k3zRfxkhwsbGxl7Enm1L2mh+tgW6qi19wdewsbGx35idxEAnTdm8UOWthQsGPbGxsbHXsdtYf/YobaY1i7SKLQc2Njb2IvbsnVkz9TyQmo3+/DKjhI2NjX1z9vAPfbko7TvtwGVxL2xsbOxF7LbYzBZoBkuC/lnrFxsbG3s3O4lskkKSNxjylkMbZuULhI2NjX1f9sml89LSLtAsxsqXGxsbG3sTu/1n3gb9s0fJA6B8k1PESdjY2Ngr2PmlZ2OR522JWQHGxsbG/j/sWat1NkaTx0/tNZPtEDY2NvYmdl6oZphZtNQy6i0QNjY29s3Z+ehMvgE436jMtkZFhISNjY29jn3eLp01g9sRnFkI9cNrbGxs7KXsdgQnL1ptSZuB800UNjY29ib2SdSetwFmQdVJQyL6abGxsbFXsGcFo12UtlWQb2na94tqjI2NjX0TdtsiPd9aJDFQUg6vKnvY2NjYO9izyKZt8f51nFQvGTY2NvZS9qzwJCWtSLniwtY2CX7I0rCxsbHXsdtbtrFRu2Eo4qG2jGFjY2OvYD/KYzgcUxazk6HMaJmwsbGxF7HbYnBVE7fdkJwv0HBRsLGxsW/CnsVD+Tk5Pr/jBcM92NjY2OvYV8X3+TBQ3gaeBUy/fBcbGxsbe1Q28m9dNQb09EfCxsbGxo7jm5Oxm3bJigYGNjY29jp2XjBmwVP7oO1WpA65sLGxsRexZwHNrKF71ULkQ0VtBIaNjY19K/YnP46lgYDCAkgAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
