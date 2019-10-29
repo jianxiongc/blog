@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/jianxiongc/"/>
-  <updated>2019-10-28T15:25:57.625Z</updated>
+  <updated>2019-10-29T12:38:26.390Z</updated>
   <id>https://github.com/jianxiongc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络概论 - 计算机网络的拓扑构型</title>
+    <link href="https://github.com/jianxiongc/2019/10/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%AE%BA-%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%A6%82%E5%BF%B5%E4%B8%8E%20OSI%20%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/</id>
+    <published>2019-10-29T14:37:12.000Z</published>
+    <updated>2019-10-29T12:38:26.390Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="计算机网络概论-计算机网络的拓扑构型"><a href="#计算机网络概论-计算机网络的拓扑构型" class="headerlink" title="计算机网络概论 - 计算机网络的拓扑构型"></a>计算机网络概论 - 计算机网络的拓扑构型</h1><h1 id="计算机网络概论-网络体系结构概念与-OSI-参考模型"><a href="#计算机网络概论-网络体系结构概念与-OSI-参考模型" class="headerlink" title="计算机网络概论 - 网络体系结构概念与 OSI 参考模型"></a>计算机网络概论 - 网络体系结构概念与 OSI 参考模型</h1><p>邮政系统的信件处理过程</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15723144537850/15723158227936.jpg" alt="-w636" title>                </div>                <div class="image-caption">-w636</div>            </figure><p><strong>邮政系统和计算机网络系统相似之处</strong></p><ul><li><p>协议</p></li><li><p>层次</p></li><li><p>接口</p></li><li><p>体系结构</p></li></ul><h3 id="网络协议（network-protocol）"><a href="#网络协议（network-protocol）" class="headerlink" title="网络协议（network protocol）"></a>网络协议（network protocol）</h3><ul><li><p>网络协议是为网络中数据交换而制定的规则、约定与标准</p></li><li><p>网络协议的3要素：语法、语义与时序</p></li><li><p>实现一种网络应用通常需要制定一组协议，称为协议栈或协议族（protocol suite）</p></li></ul><h3 id="层次（layer）"><a href="#层次（layer）" class="headerlink" title="层次（layer）"></a>层次（layer）</h3><ul><li><p>层次是人们处理复杂问题的基本方法</p></li><li><p>将总体要实现的很多功能分配在不同层次，对每个层次完成的服务及服务实现的流程都有明确规定</p></li><li><p>不同的系统具有相同的层次</p></li><li><p>不同系统的同等层具有相同的功能</p></li><li><p>高层使用低层提供的服务时，不需要知道低层服务的具体实现方法</p></li></ul><h3 id="接口（interface）"><a href="#接口（interface）" class="headerlink" title="接口（interface）"></a>接口（interface）</h3><ul><li><p>接口是同一结点内相邻层之间交换信息的连接点</p></li><li><p>同一结点的相邻层之间存在明确规定的接口，低层通过接口向高层提供服务</p></li><li><p>只要接口条件不变、低层功能不变，低层功能的具体实现方法与技术的变化不会影响整个系统的工作</p></li></ul><h3 id="网络体系结构（network-architecture）"><a href="#网络体系结构（network-architecture）" class="headerlink" title="网络体系结构（network architecture）"></a>网络体系结构（network architecture）</h3><ul><li><p>网络体系结构是网络层次结构模型与各层协议的集合</p></li><li><p>各层之间相对独立，高层只需知道下层能够提供的服务，而无需知道低层的服务如何实现</p></li><li><p>各层都可以采用最合适的技术来实现</p></li><li><p>整个系统被分解为若干个易于处理的部分</p></li><li><p>每层的功能与提供的服务都已有精确说明，因此这有利于促进协议的标准化</p></li></ul><h2 id="OSI参考模型的基本概念"><a href="#OSI参考模型的基本概念" class="headerlink" title="OSI参考模型的基本概念"></a>OSI参考模型的基本概念</h2><ul><li><p>OSI参考模型中的“开放”是指只要遵循OSI标准，一台计算机就可以与位于世界上任何地方、同样遵循同一标准的其它计算机进行通信</p></li><li><p>OSI参考模型定义开放系统的层次结构、层次之间的相互关系与各层包括的服务</p></li><li><p>OSI参考模型作为一个框架来协调和组织各层协议的制定，也是对网络内部结构精炼的概括与描述</p></li></ul><p>广域网结构与OSI参考模型关系的示意图</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15723144537850/15723383717902.jpg" alt="-w576" title>                </div>                <div class="image-caption">-w576</div>            </figure><p><strong>ISO划分层次的原则</strong></p><ul><li><p>网中各结点都具有相同的层次</p></li><li><p>不同结点的同等层具有相同的功能</p></li><li><p>同一结点内相邻层之间通过接口通信</p></li><li><p>每层可以使用下层提供的服务，并向其上层提供服务</p></li><li><p>不同结点的同等层通过协议来实现对等层次之间的通信</p></li></ul><p><strong>OSI参考模型七层结构</strong></p><ol><li><p>物理层</p></li><li><p>数据链路层</p></li><li><p>网络层</p></li><li><p>传输层</p></li><li><p>会话层</p></li><li><p>表示层</p></li><li><p>应用层</p></li></ol><p><strong>OSI参考模型各层的主要功能</strong></p><ul><li><p>物理层（physical layer）：利用传输介质实现比特序列的传输</p></li><li><p>数据链路层（data link layer）：采用差错控制与流量控制方法，使得有差错的物理线路变成无差错的数据链路</p></li><li><p>网络层（network layer）：实现路由选择、分组转发与拥塞控制等功能，为“分组”传输选择“最佳”的路由</p></li><li><p>传输层（transport layer）：向高层用户提供可靠的“端-端（end-to-end）”通信服务，向高层屏蔽下层数据通信的具体细节</p></li><li><p>会话层（session layer）是：维护两个通信计算机之间的进程通信，管理数据交换</p></li><li><p>表示层（presentation layer）：处理两个通信的计算机系统的数据表示方式，完成数据的格式变换、加密与解密、压缩与恢复</p></li><li><p>应用层（application layer）是：为应用软件提供多种网络服务，例如文件服务、数据库服务、电子邮件与其它服务等</p></li></ul><p><strong>OSI环境（OSI environment，OSIE）</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15723144537850/15723385629317.jpg" alt="-w640" title>                </div>                <div class="image-caption">-w640</div>            </figure><p><strong>OSI环境中的数据传输的过程</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15723144537850/15723385903066.jpg" alt="-w683" title>                </div>                <div class="image-caption">-w683</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;计算机网络概论-计算机网络的拓扑构型&quot;&gt;&lt;a href=&quot;#计算机网络概论-计算机网络的拓扑构型&quot; class=&quot;headerlink&quot; title=&quot;计算机网络概论 - 计算机网络的拓扑构型&quot;&gt;&lt;/a&gt;计算机网络概论 - 计算机网络的拓扑构型&lt;/h1&gt;&lt;h1 i
+      
+    
+    </summary>
+    
+      <category term="计算机网络与概论" scheme="https://github.com/jianxiongc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B8%8E%E6%A6%82%E8%AE%BA/"/>
+    
+    
+      <category term="计算机科学与技术" scheme="https://github.com/jianxiongc/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络概论 - 计算机网络的拓扑构型</title>

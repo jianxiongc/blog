@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>计算机网络概论 - 计算机网络的拓扑构型 | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="计算机科学与技术">
+    <meta name="description" content="计算机网络概论 - 计算机网络的拓扑构型计算机网络概论 - 网络体系结构概念与 OSI 参考模型邮政系统的信件处理过程                                                                                              -w636               邮政系统和计算机网络系统相似之处  协议  层次  接">
+<meta name="keywords" content="计算机科学与技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络概论 - 计算机网络的拓扑构型">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="计算机网络概论 - 计算机网络的拓扑构型计算机网络概论 - 网络体系结构概念与 OSI 参考模型邮政系统的信件处理过程                                                                                              -w636               邮政系统和计算机网络系统相似之处  协议  层次  接">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与%20OSI%20参考模型/media/15723144537850/15723158227936.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与%20OSI%20参考模型/media/15723144537850/15723383717902.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与%20OSI%20参考模型/media/15723144537850/15723385629317.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与%20OSI%20参考模型/media/15723144537850/15723385903066.jpg">
+<meta property="og:updated_time" content="2019-10-29T12:38:26.390Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络概论 - 计算机网络的拓扑构型">
+<meta name="twitter:description" content="计算机网络概论 - 计算机网络的拓扑构型计算机网络概论 - 网络体系结构概念与 OSI 参考模型邮政系统的信件处理过程                                                                                              -w636               邮政系统和计算机网络系统相似之处  协议  层次  接">
+<meta name="twitter:image" content="https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与%20OSI%20参考模型/media/15723144537850/15723158227936.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">计算机网络概论 - 计算机网络的拓扑构型</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">计算机网络概论 - 计算机网络的拓扑构型</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-29T14:37:12.000Z" itemprop="datePublished" class="page-time">
+  2019-10-29
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机网络与概论/">计算机网络与概论</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计算机网络概论-计算机网络的拓扑构型"><span class="post-toc-number">1.</span> <span class="post-toc-text">计算机网络概论 - 计算机网络的拓扑构型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#计算机网络概论-网络体系结构概念与-OSI-参考模型"><span class="post-toc-number">2.</span> <span class="post-toc-text">计算机网络概论 - 网络体系结构概念与 OSI 参考模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#网络协议（network-protocol）"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">网络协议（network protocol）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#层次（layer）"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">层次（layer）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接口（interface）"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">接口（interface）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#网络体系结构（network-architecture）"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">网络体系结构（network architecture）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OSI参考模型的基本概念"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">OSI参考模型的基本概念</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-计算机网络概论-网络体系结构概念与 OSI 参考模型"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">计算机网络概论 - 计算机网络的拓扑构型</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-29 22:37:12" datetime="2019-10-29T14:37:12.000Z"  itemprop="datePublished">2019-10-29</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机网络与概论/">计算机网络与概论</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="计算机网络概论-计算机网络的拓扑构型"><a href="#计算机网络概论-计算机网络的拓扑构型" class="headerlink" title="计算机网络概论 - 计算机网络的拓扑构型"></a>计算机网络概论 - 计算机网络的拓扑构型</h1><h1 id="计算机网络概论-网络体系结构概念与-OSI-参考模型"><a href="#计算机网络概论-网络体系结构概念与-OSI-参考模型" class="headerlink" title="计算机网络概论 - 网络体系结构概念与 OSI 参考模型"></a>计算机网络概论 - 网络体系结构概念与 OSI 参考模型</h1><p>邮政系统的信件处理过程</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15723144537850/15723158227936.jpg" alt="-w636" title>
+                </div>
+                <div class="image-caption">-w636</div>
+            </figure>
+
+<p><strong>邮政系统和计算机网络系统相似之处</strong></p>
+<ul>
+<li><p>协议</p>
+</li>
+<li><p>层次</p>
+</li>
+<li><p>接口</p>
+</li>
+<li><p>体系结构</p>
+</li>
+</ul>
+<h3 id="网络协议（network-protocol）"><a href="#网络协议（network-protocol）" class="headerlink" title="网络协议（network protocol）"></a>网络协议（network protocol）</h3><ul>
+<li><p>网络协议是为网络中数据交换而制定的规则、约定与标准</p>
+</li>
+<li><p>网络协议的3要素：语法、语义与时序</p>
+</li>
+<li><p>实现一种网络应用通常需要制定一组协议，称为协议栈或协议族（protocol suite）</p>
+</li>
+</ul>
+<h3 id="层次（layer）"><a href="#层次（layer）" class="headerlink" title="层次（layer）"></a>层次（layer）</h3><ul>
+<li><p>层次是人们处理复杂问题的基本方法</p>
+</li>
+<li><p>将总体要实现的很多功能分配在不同层次，对每个层次完成的服务及服务实现的流程都有明确规定</p>
+</li>
+<li><p>不同的系统具有相同的层次</p>
+</li>
+<li><p>不同系统的同等层具有相同的功能</p>
+</li>
+<li><p>高层使用低层提供的服务时，不需要知道低层服务的具体实现方法</p>
+</li>
+</ul>
+<h3 id="接口（interface）"><a href="#接口（interface）" class="headerlink" title="接口（interface）"></a>接口（interface）</h3><ul>
+<li><p>接口是同一结点内相邻层之间交换信息的连接点</p>
+</li>
+<li><p>同一结点的相邻层之间存在明确规定的接口，低层通过接口向高层提供服务</p>
+</li>
+<li><p>只要接口条件不变、低层功能不变，低层功能的具体实现方法与技术的变化不会影响整个系统的工作</p>
+</li>
+</ul>
+<h3 id="网络体系结构（network-architecture）"><a href="#网络体系结构（network-architecture）" class="headerlink" title="网络体系结构（network architecture）"></a>网络体系结构（network architecture）</h3><ul>
+<li><p>网络体系结构是网络层次结构模型与各层协议的集合</p>
+</li>
+<li><p>各层之间相对独立，高层只需知道下层能够提供的服务，而无需知道低层的服务如何实现</p>
+</li>
+<li><p>各层都可以采用最合适的技术来实现</p>
+</li>
+<li><p>整个系统被分解为若干个易于处理的部分</p>
+</li>
+<li><p>每层的功能与提供的服务都已有精确说明，因此这有利于促进协议的标准化</p>
+</li>
+</ul>
+<h2 id="OSI参考模型的基本概念"><a href="#OSI参考模型的基本概念" class="headerlink" title="OSI参考模型的基本概念"></a>OSI参考模型的基本概念</h2><ul>
+<li><p>OSI参考模型中的“开放”是指只要遵循OSI标准，一台计算机就可以与位于世界上任何地方、同样遵循同一标准的其它计算机进行通信</p>
+</li>
+<li><p>OSI参考模型定义开放系统的层次结构、层次之间的相互关系与各层包括的服务</p>
+</li>
+<li><p>OSI参考模型作为一个框架来协调和组织各层协议的制定，也是对网络内部结构精炼的概括与描述</p>
+</li>
+</ul>
+<p>广域网结构与OSI参考模型关系的示意图</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15723144537850/15723383717902.jpg" alt="-w576" title>
+                </div>
+                <div class="image-caption">-w576</div>
+            </figure>
+
+
+<p><strong>ISO划分层次的原则</strong></p>
+<ul>
+<li><p>网中各结点都具有相同的层次</p>
+</li>
+<li><p>不同结点的同等层具有相同的功能</p>
+</li>
+<li><p>同一结点内相邻层之间通过接口通信</p>
+</li>
+<li><p>每层可以使用下层提供的服务，并向其上层提供服务</p>
+</li>
+<li><p>不同结点的同等层通过协议来实现对等层次之间的通信</p>
+</li>
+</ul>
+<p><strong>OSI参考模型七层结构</strong></p>
+<ol>
+<li><p>物理层</p>
+</li>
+<li><p>数据链路层</p>
+</li>
+<li><p>网络层</p>
+</li>
+<li><p>传输层</p>
+</li>
+<li><p>会话层</p>
+</li>
+<li><p>表示层</p>
+</li>
+<li><p>应用层</p>
+</li>
+</ol>
+<p><strong>OSI参考模型各层的主要功能</strong></p>
+<ul>
+<li><p>物理层（physical layer）：利用传输介质实现比特序列的传输</p>
+</li>
+<li><p>数据链路层（data link layer）：采用差错控制与流量控制方法，使得有差错的物理线路变成无差错的数据链路</p>
+</li>
+<li><p>网络层（network layer）：实现路由选择、分组转发与拥塞控制等功能，为“分组”传输选择“最佳”的路由</p>
+</li>
+<li><p>传输层（transport layer）：向高层用户提供可靠的“端-端（end-to-end）”通信服务，向高层屏蔽下层数据通信的具体细节</p>
+</li>
+<li><p>会话层（session layer）是：维护两个通信计算机之间的进程通信，管理数据交换</p>
+</li>
+<li><p>表示层（presentation layer）：处理两个通信的计算机系统的数据表示方式，完成数据的格式变换、加密与解密、压缩与恢复</p>
+</li>
+<li><p>应用层（application layer）是：为应用软件提供多种网络服务，例如文件服务、数据库服务、电子邮件与其它服务等</p>
+</li>
+</ul>
+<p><strong>OSI环境（OSI environment，OSIE）</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15723144537850/15723385629317.jpg" alt="-w640" title>
+                </div>
+                <div class="image-caption">-w640</div>
+            </figure>
+
+
+<p><strong>OSI环境中的数据传输的过程</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15723144537850/15723385903066.jpg" alt="-w683" title>
+                </div>
+                <div class="image-caption">-w683</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-10-29T12:38:26.390Z" itemprop="dateUpdated">2019-10-29 20:38:26</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/" target="_blank" rel="external">https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/计算机科学与技术/">计算机科学与技术</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/&title=《计算机网络概论 - 计算机网络的拓扑构型》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/&title=《计算机网络概论 - 计算机网络的拓扑构型》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络概论 - 计算机网络的拓扑构型》 — Jianxiong&url=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/10/28/计算机网络概论-计算机网络的拓扑构型/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">计算机网络概论 - 计算机网络的拓扑构型</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/&title=《计算机网络概论 - 计算机网络的拓扑构型》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/&title=《计算机网络概论 - 计算机网络的拓扑构型》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络概论 - 计算机网络的拓扑构型》 — Jianxiong&url=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD3ElEQVR42u3cW27bUAwFQO9/0+kC4hsf8lw7KTD6MmpZEkcFWD7QxyM+vr4dp3NOn0+/Ss75/u3p+qdzLh84cODAgWMY6unSSUg/AyWP+3Oou6dNfoUDBw4cOO5yNInza3XkcHk2bOhx4MCBA8dvcexS4+7ME1x+Jg4cOHDg+B85pgH019mVgjhw4MCB45McTYK8VfglrcZkNPWhXikOHDhw4Jjlu0Gj8O9/fst+Bw4cOHDgGG6FJQmpT6W7FbfkLuPocODAgQNHzbFr/OVlXtKC3BE3xd6LM3HgwIEDx5s5+nW33ePuVhymr+0RTaJw4MCBA0fKMU2WSWLLU+OuwZeXlNNVCRw4cODA0XNMVxBulVV9+29XnkXJGwcOHDhwXOJYttKKdl6T1G9VXk++xYEDBw4clzjeUVxNlySm5dk71ilw4MCBA8e7OfJzmgJsN8raXecFNA4cOHDgqDmmyaxvxk0fsbnmbkCFAwcOHDh2HHlbcPegzbrDlLtZ4zvud+DAgQMHjpv7ABf+i8zpKsP09fRl5OCvAg4cOHDgiDmSIicpnJokl6ThfLA0HVwde6U4cODAgWPIsUuQ+WhnF95uiSEv0o53xIEDBw4cNcdgHjVsDu4WC/LmYDNbW5ZwOHDgwIFj2J3LC6RbDcFd0zBPzMueKA4cOHDgKDjy8mY6fJomxV0Y+WJfVEbiwIEDB46ao0m0/eBn99vpusOy5MOBAwcOHCuOcZ03TKh5qLs03FSuT36FAwcOHDiu5p3dAClfevsM+q7sjN4GDhw4cOAIOKa33C0cvCMxN6Xj8VscOHDgwFFzNAXS3cW13ZrFLqG+GDvhwIEDB45LHHkqysu25M/7AKYLE+P5Gw4cOHDgiDmmhVZy0ZygWapIsPK7P5nC4cCBAweOFUd+uTyA/PbTdmS/rJB8xoEDBw4cPUee5PoHmrbw8rs3/whY5nwcOHDgwBFwJJdOkuu0/NuFPX2FSUsRBw4cOHA0HPm4KA9+NwSalmrTZxvP33DgwIEDxyWOaWrMw5uWavnaRE72IkYcOHDgwHGJo28X7uBuXb8v9nDgwIEDxy2OpNnXr7JNw9hdoV/CwIEDBw4cPUdfMk1HPjll02Qcry/gwIEDB45LHPnRFGy7wPoW4a6MxIEDBw4cPcd0PNOsODSJdlq8LRMtDhw4cOC4xNEkqmlx1aT2ZhAVnY8DBw4cOH6JoynA7obdL+ThwIEDB46/ybFrGiZh7F7DMuniwIEDB45LHNN1hKRJlwfTtyanL+DC2AkHDhw4cNQLDdMh0G5QlKTzphRMEjYOHDhw4Fhx/AOtH/eqpDOvowAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
