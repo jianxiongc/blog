@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>计算机网络概论 - TCP/IP 模型与互联网 | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="计算机科学与技术">
+    <meta name="description" content="TCP/IP协议的主要特点 开放的协议标准  独立于特定的计算机硬件与操作系统  独立于特定的网络硬件，可以运行在局域网、城域网与广域网，适用于网络互联  统一的网络地址分配方案，所有运行TCP/IP协议的设备都具有唯一的网络地址  标准化的应用层协议，可以提供多种可靠的网络服务   TCP/IP参考模型的层次结构">
+<meta name="keywords" content="计算机科学与技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络概论 - TCP&#x2F;IP 模型与互联网">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="TCP/IP协议的主要特点 开放的协议标准  独立于特定的计算机硬件与操作系统  独立于特定的网络硬件，可以运行在局域网、城域网与广域网，适用于网络互联  统一的网络地址分配方案，所有运行TCP/IP协议的设备都具有唯一的网络地址  标准化的应用层协议，可以提供多种可靠的网络服务   TCP/IP参考模型的层次结构">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP%20模型与互联网/media/15723532945682/15724278731438.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP%20模型与互联网/media/15723532945682/15725319842174.jpg">
+<meta property="og:updated_time" content="2019-10-31T14:46:47.881Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络概论 - TCP&#x2F;IP 模型与互联网">
+<meta name="twitter:description" content="TCP/IP协议的主要特点 开放的协议标准  独立于特定的计算机硬件与操作系统  独立于特定的网络硬件，可以运行在局域网、城域网与广域网，适用于网络互联  统一的网络地址分配方案，所有运行TCP/IP协议的设备都具有唯一的网络地址  标准化的应用层协议，可以提供多种可靠的网络服务   TCP/IP参考模型的层次结构">
+<meta name="twitter:image" content="https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP%20模型与互联网/media/15723532945682/15724278731438.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">计算机网络概论 - TCP/IP 模型与互联网</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">计算机网络概论 - TCP/IP 模型与互联网</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-31T14:43:10.000Z" itemprop="datePublished" class="page-time">
+  2019-10-31
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机网络与概论/">计算机网络与概论</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TCP-IP协议的主要特点"><span class="post-toc-number">1.</span> <span class="post-toc-text">TCP/IP协议的主要特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TCP-IP参考模型的层次结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">TCP/IP参考模型的层次结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TCP-IP参考模型与OSI参考模型的层次对应关系"><span class="post-toc-number">3.</span> <span class="post-toc-text">TCP/IP参考模型与OSI参考模型的层次对应关系</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TCP-IP参考模型各层的主要功能"><span class="post-toc-number">4.</span> <span class="post-toc-text">TCP/IP参考模型各层的主要功能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#互联网协议标准、RFC文档与管理机构"><span class="post-toc-number">5.</span> <span class="post-toc-text">互联网协议标准、RFC文档与管理机构</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-计算机网络概论-TCP:IP 模型与互联网"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">计算机网络概论 - TCP/IP 模型与互联网</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-31 22:43:10" datetime="2019-10-31T14:43:10.000Z"  itemprop="datePublished">2019-10-31</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机网络与概论/">计算机网络与概论</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="TCP-IP协议的主要特点"><a href="#TCP-IP协议的主要特点" class="headerlink" title="TCP/IP协议的主要特点"></a>TCP/IP协议的主要特点</h3><ul>
+<li><p>开放的协议标准</p>
+</li>
+<li><p>独立于特定的计算机硬件与操作系统</p>
+</li>
+<li><p>独立于特定的网络硬件，可以运行在局域网、城域网与广域网，适用于网络互联</p>
+</li>
+<li><p>统一的网络地址分配方案，所有运行TCP/IP协议的设备都具有唯一的网络地址</p>
+</li>
+<li><p>标准化的应用层协议，可以提供多种可靠的网络服务</p>
+</li>
+</ul>
+<h3 id="TCP-IP参考模型的层次结构"><a href="#TCP-IP参考模型的层次结构" class="headerlink" title="TCP/IP参考模型的层次结构"></a>TCP/IP参考模型的层次结构</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15723532945682/15724278731438.jpg" alt="-w417" title>
+                </div>
+                <div class="image-caption">-w417</div>
+            </figure>
+
+<h3 id="TCP-IP参考模型与OSI参考模型的层次对应关系"><a href="#TCP-IP参考模型与OSI参考模型的层次对应关系" class="headerlink" title="TCP/IP参考模型与OSI参考模型的层次对应关系"></a>TCP/IP参考模型与OSI参考模型的层次对应关系</h3><ul>
+<li><p>应用层（application layer）：应用层与OSI参考模型的应用层、表示层与会话层对应</p>
+</li>
+<li><p>传输层（transport layer）：传输层与OSI参考模型的传输层对应</p>
+</li>
+<li><p>互联网络层（internet layer）：互联网络层与OSI参考模型的网络层对应</p>
+</li>
+<li><p>主机-网络层（host-to-network layer）：主机-网络层与OSI参考模型的数据链路层、物理层对应</p>
+</li>
+</ul>
+<h3 id="TCP-IP参考模型各层的主要功能"><a href="#TCP-IP参考模型各层的主要功能" class="headerlink" title="TCP/IP参考模型各层的主要功能"></a>TCP/IP参考模型各层的主要功能</h3><p><strong>主机-网络层</strong></p>
+<p>主机-网络层是TCP/IP参考模型的最低层，它负责通过网络发送和接收IP数据报</p>
+<p>主机-网络层没有规定使用哪种协议，它采取开放的策略，允许使用广域网、局域网与城域网的各种协议。任何一种现有的和流行的低层传输协议都可以与网络层接口</p>
+<p><strong>互联网络层</strong></p>
+<ul>
+<li><p>处理来自传输层的数据发送请求，将传输层报文段封装成IP数据报，启动路由选择算法，选择适当的发送路径，并将数据报转发到下一个结点</p>
+</li>
+<li><p>处理接收的数据报，检查接收分组目的IP地址；如果目的地址为本结点的IP地址，则除去报头将分组交送传输层处理；如果需要转发，选择发送路径并转发</p>
+</li>
+<li><p>处理互联网络的路由选择、流量控制与拥塞控制</p>
+</li>
+</ul>
+<p><strong>传输层</strong></p>
+<ul>
+<li><p>传输层负责在会话的进程之间建立和维护端-端的连接，实现网络环境中分布式进程通信</p>
+</li>
+<li><p>传输层定义两种不同的协议：传输控制协议（TCP）与用户数据报协议（UDP）</p>
+</li>
+<li><p>TCP是一种可靠的、面向连接、面向字节流（byte stream）的传输层协议</p>
+</li>
+<li><p>UDP是一种不可靠的无连接传输层协议</p>
+</li>
+</ul>
+<p><strong>应用层</strong></p>
+<p>TCP/IP应用层基本的协议为 : </p>
+<ul>
+<li>远程登录协议（TELNET）实现远程登录功能</li>
+<li>文件传输协议（FTP）实现交互式文件传输功能</li>
+<li>简单邮件传输协议（SMTP）实现电子邮件传输功能</li>
+<li>域名系统（DNS）实现网络设备名字到IP地址映射服务功能</li>
+<li>简单网络管理协议（SNMP）实现网络设备的监控与管理功能</li>
+<li>超文本传输协议（HTTP）实现Web服务功能</li>
+</ul>
+<p><strong>应用层协议与传输层协议的关系</strong></p>
+<p>应用层协议可以分为3类：</p>
+<p>依赖TCP协议的主要有TELNET、SMTP、FTP等<br>依赖UDP协议的主要有SNMP、<strong>TFTP</strong>等<br>既依赖TCP又依赖UDP协议的主要有DNS</p>
+<h3 id="互联网协议标准、RFC文档与管理机构"><a href="#互联网协议标准、RFC文档与管理机构" class="headerlink" title="互联网协议标准、RFC文档与管理机构"></a>互联网协议标准、RFC文档与管理机构</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15723532945682/15725319842174.jpg" alt="-w647" title>
+                </div>
+                <div class="image-caption">-w647</div>
+            </figure>
+
+
+
+
+<p><strong>TFTP</strong>: TFTP（Trivial File Transfer Protocol,简单文件传输协议）是TCP/IP协议族中的一个用来在客户机与服务器之间进行简单文件传输的协议，提供不复杂、开销不大的文件传输服务。端口号为69。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-10-31T14:46:47.881Z" itemprop="dateUpdated">2019-10-31 22:46:47</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/" target="_blank" rel="external">https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/计算机科学与技术/">计算机科学与技术</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/&title=《计算机网络概论 - TCP/IP 模型与互联网》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/&title=《计算机网络概论 - TCP/IP 模型与互联网》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络概论 - TCP/IP 模型与互联网》 — Jianxiong&url=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/10/29/计算机网络概论-网络体系结构概念与 OSI 参考模型/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">计算机网络概论 - 网络体系结构概念与 OSI 参考模型</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/&title=《计算机网络概论 - TCP/IP 模型与互联网》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/&title=《计算机网络概论 - TCP/IP 模型与互联网》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《计算机网络概论 - TCP/IP 模型与互联网》 — Jianxiong&url=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADOUlEQVR42u3ay27iQBAF0Pz/TzPbkZLY93YRBSrHK2TA7tOWKOrx8REfj/+Oz+c/v75+9/pb1+eTVT3twMbGxn4T9uPySG6QfLJlJ9e/Xud3n8HGxsbeyk5ulgSqs7D03RXah1HcFxsbGxv7cont0vNwla8TGxsbG7stCU0SjDZ0/XIAw8bGxn5Jdh5mJsuaNBsS6o/U0rCxsbFfnp13RV//9Y/0t7GxsbFfmP0oj/Y6Z82DpDg1UmBjY2MvYrcFoCSFyFOLs3fzQaKb5AcbGxt7Ebultq3ZvDx0VvrPgyg2Njb2Vna+K3khPk8Y8qdx1hL49prY2NjYi9jPbQa0Z85KV+0AEDY2NvZW9nUIyROMfChn9DTijbi5JjY2NvY6dl58n6QT7ZjmcwPnF+UkbGxs7D/Azn/5z9q0bfBri1aHAQwbGxv7DdlJoecsRZmHsbYBUAQwbGxs7EXsJIDlaUk70NMW+tu7fHEGGxsbexF7Tp10mCeASesXGxsbex+7bdC2o43z7chft1uMjY2NvYmdtG/bhCT/1mgE56jVgY2Njb2Jnf9lnxSD8iA3H+spQhc2Njb2CnYSzPJmaps21G3ao6ZFXVrCxsbGfhN2na/EgScfzcnXkGxQFBSxsbGx17GfOyLThpNnFaqKhAQbGxt7EbsNVJOMJx/EmZSfDnMvbGxs7BXsSfP1rDXbjuCcFaGKGSVsbGzsN2SfFXeSv/j54E7ekGi/e9MewMbGxl7BzotHk4LR5POTUaGbQIuNjY29iJ3PscybsvOWQ5ve3GwcNjY29gp23hwtalRHSUtbxhqtEBsbG3sduyjHDEJIEmAOi0Tx3bGxsbF3s9vAk994nq60idDNlmFjY2MvZedb0C6oTRjqmaM2jGFjY2OvYE8SgCS1yMNhe81RIwEbGxt7EbstEk2K8mdJRb6VyXbUm4KNjY39JuwkaOVDmS1m0jDIA9hhVwQbGxv7rdhnicF16GoLVfl62q3ExsbGxm5LSEnRP29CtCE2ai1gY2Nj/2F2UniabOJZ8tMWwrCxsbH3sSeFm/kSk7QkH7iMAi02Njb2Iva8fJ/c5qzbnDyAPO3BxsbGXsf+By/8zkpkPznjAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
