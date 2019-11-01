@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>网络技术发展 - 广域网技术特征 | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="网络技术发展">
+    <meta name="description" content="广域网的主要技术特征 广域网常由电信运营商组建、运营和维护  网络运营商运营的广域网为用户提供高质量的数据传输服务，属于公共数据网络（PDN）的性质  用户使用广域网服务需要向广域网的运营商租用通信线路或其他资源  广域网研究的重点是宽带核心交换技术  早期的广域网主要用于大型计算机系统的互联  互联网中广域网更多地是作为覆盖地区、国家、洲际地理区域的核心交换平台   广域网技术的发展趋势用于构成">
+<meta name="keywords" content="网络技术发展">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络技术发展 - 广域网技术特征">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="广域网的主要技术特征 广域网常由电信运营商组建、运营和维护  网络运营商运营的广域网为用户提供高质量的数据传输服务，属于公共数据网络（PDN）的性质  用户使用广域网服务需要向广域网的运营商租用通信线路或其他资源  广域网研究的重点是宽带核心交换技术  早期的广域网主要用于大型计算机系统的互联  互联网中广域网更多地是作为覆盖地区、国家、洲际地理区域的核心交换平台   广域网技术的发展趋势用于构成">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/11/01/网络技术发展%20-%20广域网技术特征/media/15725734668131/15725975307582.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/11/01/网络技术发展%20-%20广域网技术特征/media/15725734668131/15725978012539.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/11/01/网络技术发展%20-%20广域网技术特征/media/15725734668131/15725979022077.jpg">
+<meta property="og:updated_time" content="2019-11-01T14:57:30.865Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络技术发展 - 广域网技术特征">
+<meta name="twitter:description" content="广域网的主要技术特征 广域网常由电信运营商组建、运营和维护  网络运营商运营的广域网为用户提供高质量的数据传输服务，属于公共数据网络（PDN）的性质  用户使用广域网服务需要向广域网的运营商租用通信线路或其他资源  广域网研究的重点是宽带核心交换技术  早期的广域网主要用于大型计算机系统的互联  互联网中广域网更多地是作为覆盖地区、国家、洲际地理区域的核心交换平台   广域网技术的发展趋势用于构成">
+<meta name="twitter:image" content="https://github.com/jianxiongc/2019/11/01/网络技术发展%20-%20广域网技术特征/media/15725734668131/15725975307582.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">网络技术发展 - 广域网技术特征</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">网络技术发展 - 广域网技术特征</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-01T14:56:10.000Z" itemprop="datePublished" class="page-time">
+  2019-11-01
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机科学与技术/">计算机科学与技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#广域网的主要技术特征"><span class="post-toc-number">1.</span> <span class="post-toc-text">广域网的主要技术特征</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#广域网技术的发展趋势"><span class="post-toc-number">2.</span> <span class="post-toc-text">广域网技术的发展趋势</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#广域网技术发展与TCP-IP协议的关系"><span class="post-toc-number">3.</span> <span class="post-toc-text">广域网技术发展与TCP/IP协议的关系</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-网络技术发展 - 广域网技术特征"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">网络技术发展 - 广域网技术特征</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-01 22:56:10" datetime="2019-11-01T14:56:10.000Z"  itemprop="datePublished">2019-11-01</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机科学与技术/">计算机科学与技术</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="广域网的主要技术特征"><a href="#广域网的主要技术特征" class="headerlink" title="广域网的主要技术特征"></a>广域网的主要技术特征</h3><ul>
+<li><p>广域网常由电信运营商组建、运营和维护</p>
+</li>
+<li><p>网络运营商运营的广域网为用户提供高质量的数据传输服务，属于公共数据网络（PDN）的性质</p>
+</li>
+<li><p>用户使用广域网服务需要向广域网的运营商租用通信线路或其他资源</p>
+</li>
+<li><p>广域网研究的重点是宽带核心交换技术</p>
+</li>
+<li><p>早期的广域网主要用于大型计算机系统的互联</p>
+</li>
+<li><p>互联网中广域网更多地是作为覆盖地区、国家、洲际地理区域的核心交换平台</p>
+</li>
+</ul>
+<h3 id="广域网技术的发展趋势"><a href="#广域网技术的发展趋势" class="headerlink" title="广域网技术的发展趋势"></a>广域网技术的发展趋势</h3><p><strong>用于构成广域网的主要通信技术与网络类型</strong></p>
+<ul>
+<li><p>公共电话交换网（PSTN）</p>
+</li>
+<li><p>综合业务数字网（ISDN）</p>
+</li>
+<li><p>数字数据网（DDN）</p>
+</li>
+<li><p>X.25分组交换网</p>
+</li>
+<li><p>帧中继（FR）网</p>
+</li>
+<li><p>异步传输模式（ATM）网</p>
+</li>
+<li><p>吉比特以太网 （GE）与十吉比特以太网（10GE）</p>
+</li>
+</ul>
+<p><strong>帧中继技术发展的背景</strong></p>
+<ul>
+<li><p>传输介质由原来的电缆逐步发展到光纤，光纤的误码率很低，数据传输速率高</p>
+</li>
+<li><p>局域网的数据传输速率提高得很快，大量局域网之间高速互连的需求越来越强烈</p>
+</li>
+<li><p>用户计算机性能提高，可以承担一部分原来是由通信子网承担的通信处理功能</p>
+</li>
+</ul>
+<p><strong>帧中继网的特点</strong></p>
+<ul>
+<li><p>高网络吞吐量、低传输延时</p>
+</li>
+<li><p>帧中继是一种采用虚电路的广域网技术，其协议简单、高效，网络吞吐量高、传输延时短</p>
+</li>
+<li><p>帧中继网工作在物理层与数据链路层，流量控制与纠错功能由高层协议完成</p>
+</li>
+<li><p>帧中继网处理一个帧的转发延时要比X.25网减小一个数量级；帧中继网的吞吐量要比X.25网提高一个数量级以上</p>
+</li>
+<li><p>帧中继也称为X.25的流水线方式</p>
+</li>
+<li><p>提供虚拟专网（VPN）服务</p>
+</li>
+<li><p>帧中继网的设计目标主要是局域网之间的互连</p>
+</li>
+<li><p>帧中继网的虚拟专网服务能提供较高的安全性和服务质量</p>
+</li>
+<li><p>帧中继采用面向连接的方式，为用户提供虚拟专用网络服务</p>
+</li>
+<li><p>帧中继网在数据链路层VPN技术中占主导地位</p>
+</li>
+</ul>
+<p><strong>基于帧中继的VPN结构</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15725734668131/15725975307582.jpg" alt="-w610" title>
+                </div>
+                <div class="image-caption">-w610</div>
+            </figure>
+
+
+<p><strong>从B-ISDN到ATM</strong></p>
+<p>ISDN致力于实现的目标：</p>
+<p>提供一个在世界范围内协调一致的数字通信网络，支持各种通信服务，并在不同的国家采用相同的标准；</p>
+<p>为在通信网络之间进行数字传输提供完整的标准；</p>
+<p>提供一个标准的用户接口，使通信网络内部的变化对终端用户透明。</p>
+<p>宽带综合业务数据网（B-ISDN）的基本概念</p>
+<p>B-ISDN的设计目标是将语音、数据、静态与动态图像的传输，以及传统的服务综合在一个通信网中，覆盖从低传输速率到高传输速率的各种非实时、实时与突发性的传输要求；</p>
+<p>ATM技术符合B-ISDN的需求，B-ISDN的底层传输网选择了ATM技术。</p>
+<p>ATM技术的主要特点：</p>
+<p>ATM采用的是一种面向连接的技术。</p>
+<p>ATM采用的信元（cell）长度为53B，其中信元头部长度为5B，数据长度为48B；</p>
+<p>ATM以统计时分多路复用方式来动态分配带宽，网络传输延时小，能够适应实时通信的要求；</p>
+<p>ATM的数据传输速率为155Mbps～2.4Gbps。</p>
+<p><strong>光网络研究</strong></p>
+<p>第一代：铜缆与无线射频；</p>
+<p>第二代：光纤；</p>
+<p>第三代：在传输网络中引入光交换机、光路由器，直接在光层配置光通道的传输网络</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15725734668131/15725978012539.jpg" alt="-w622" title>
+                </div>
+                <div class="image-caption">-w622</div>
+            </figure>
+
+
+<p><strong>光以太网技术</strong></p>
+<p><strong>光以太网技术研究的背景</strong></p>
+<ul>
+<li><p>利用光纤的巨大带宽资源，以及成熟和广泛应用的Ethernet网技术，为运营商建造新一代的网络提供技术支持；</p>
+</li>
+<li><p>基于这样一个设计思想，一种可运营的光以太网的概念应运而生，从根本上改变电信运营商规划、建设、管理思想。</p>
+</li>
+</ul>
+<p><strong>光以太网的主要特征</strong></p>
+<p>根据终端用户的实际应用需求分配带宽，保证带宽资源充分、合理应用；</p>
+<p>用户访问网络资源必须经过认证和授权，确保用户对网络资源安全的使用；</p>
+<p>及时获得用户的上网时间记录和流量记录，实行计费功能；</p>
+<p>支持VPN和防火墙，有效地保证网络安全</p>
+<p>提供分级的QoS服务；</p>
+<p>方便、快速、灵活地适应用户和业务的扩展。</p>
+<p>光以太网的技术优势：</p>
+<p>组建同样规模的广域网或城域网，光以太网的造价是SONET的1/5，是ATM的1/10。</p>
+<p>IEEE已完成速率从10Mbps、100Mbps、1Gbps到10Gbps的Ethernet技术标准制定，正在研发的速率为100Gbps的Ethernet产品；</p>
+<p>能够覆盖从广域网、城域网到局域网的整个范围。</p>
+<h3 id="广域网技术发展与TCP-IP协议的关系"><a href="#广域网技术发展与TCP-IP协议的关系" class="headerlink" title="广域网技术发展与TCP/IP协议的关系"></a>广域网技术发展与TCP/IP协议的关系</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15725734668131/15725979022077.jpg" alt="-w653" title>
+                </div>
+                <div class="image-caption">-w653</div>
+            </figure>
+
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-11-01T14:57:30.865Z" itemprop="dateUpdated">2019-11-01 22:57:30</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/11/01/网络技术发展 - 广域网技术特征/" target="_blank" rel="external">https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/网络技术发展/">网络技术发展</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/&title=《网络技术发展 - 广域网技术特征》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/&title=《网络技术发展 - 广域网技术特征》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络技术发展 - 广域网技术特征》 — Jianxiong&url=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/10/31/计算机网络概论-TCP:IP 模型与互联网/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">计算机网络概论 - TCP/IP 模型与互联网</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/&title=《网络技术发展 - 广域网技术特征》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/&title=《网络技术发展 - 广域网技术特征》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络技术发展 - 广域网技术特征》 — Jianxiong&url=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3awU7sMAwFUP7/p2GLBG3vdZJhhE5Xo76+kNNF7Nr++Iivz4XrfrXvd37+vnp+84WHh4e3detXz1xt6/7OPSZZLd8zHh4e3mne1Ym663dyuN+/jvvgcXkfDw8P7814eQCIthKz8fDw8P4Trw0ASaKc7AEPDw/v9bx86ROHext4jtRa8PDw8LqeVLS59/l9pL+Hh4eHd2AgYLbySrqcB4NfVsbDw8M7wMsP3FmqnY8CtKMDRQsNDw8P7wCvTaDb0ai28JEMHCy9CDw8PLxl3myJ9XJGMmrQNueKWIGHh4e3zGs/+PNtrQwTtLCHyQg8PDy8Zd4s726T5lmy3r6+Ohbh4eHhjXh5s2p9pGBvi6sobeDh4eFt5c2Kqm3pYTY60I5e/fIMHh4e3gHeegs/aYklvDww1OMCeHh4eC/n5cNVK0nwrG8VhQ08PDy8A7x2KKotCqwUZ2fjCw9BAg8PD28TLz988wJuUphIelVFTboNCXh4eHglbxYGZkf5rIA7e0F4eHh453jtf94bJGZDCW2pAg8PD+8Eb6WgkBcO7jfUBokk6cfDw8M7x1tJl1cO8WTT7W6juIeHh4e3wMsLqbMCQX7oz1Lthw8APDw8vAO8fOmohzbaSpsiJ+n+ZdzDw8PD28Rb77m3W2kHp9ZbaHh4eHh7ea0+P9bz4ap8YKt9Eg8PD+8cr2017So95EXhWREZDw8P7xyvPdBnSXZb4JgVQfDw8PDO8T7LK+8rJUWKWdGh2A8eHh7eAd7sjF1vd7Wnd5tS4+Hh4Z3mtUvn72xWgGiHDB5Ww8PDwzvGyxPfdgRq9jpWRruif8bDw8P7U96sX7/y14uvBDw8PLw35rUpb15uaIMQHh4e3mt4efOpbTjlJeBZKeThPh4eHt4BXvvBn6fLs1N6VoDYMJ6Fh4eH98z7ArZeVLm7MOYvAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

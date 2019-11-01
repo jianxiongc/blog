@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/jianxiongc/"/>
-  <updated>2019-10-31T14:46:47.881Z</updated>
+  <updated>2019-11-01T14:57:30.865Z</updated>
   <id>https://github.com/jianxiongc/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络技术发展 - 广域网技术特征</title>
+    <link href="https://github.com/jianxiongc/2019/11/01/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%20-%20%E5%B9%BF%E5%9F%9F%E7%BD%91%E6%8A%80%E6%9C%AF%E7%89%B9%E5%BE%81/"/>
+    <id>https://github.com/jianxiongc/2019/11/01/网络技术发展 - 广域网技术特征/</id>
+    <published>2019-11-01T14:56:10.000Z</published>
+    <updated>2019-11-01T14:57:30.865Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="广域网的主要技术特征"><a href="#广域网的主要技术特征" class="headerlink" title="广域网的主要技术特征"></a>广域网的主要技术特征</h3><ul><li><p>广域网常由电信运营商组建、运营和维护</p></li><li><p>网络运营商运营的广域网为用户提供高质量的数据传输服务，属于公共数据网络（PDN）的性质</p></li><li><p>用户使用广域网服务需要向广域网的运营商租用通信线路或其他资源</p></li><li><p>广域网研究的重点是宽带核心交换技术</p></li><li><p>早期的广域网主要用于大型计算机系统的互联</p></li><li><p>互联网中广域网更多地是作为覆盖地区、国家、洲际地理区域的核心交换平台</p></li></ul><h3 id="广域网技术的发展趋势"><a href="#广域网技术的发展趋势" class="headerlink" title="广域网技术的发展趋势"></a>广域网技术的发展趋势</h3><p><strong>用于构成广域网的主要通信技术与网络类型</strong></p><ul><li><p>公共电话交换网（PSTN）</p></li><li><p>综合业务数字网（ISDN）</p></li><li><p>数字数据网（DDN）</p></li><li><p>X.25分组交换网</p></li><li><p>帧中继（FR）网</p></li><li><p>异步传输模式（ATM）网</p></li><li><p>吉比特以太网 （GE）与十吉比特以太网（10GE）</p></li></ul><p><strong>帧中继技术发展的背景</strong></p><ul><li><p>传输介质由原来的电缆逐步发展到光纤，光纤的误码率很低，数据传输速率高</p></li><li><p>局域网的数据传输速率提高得很快，大量局域网之间高速互连的需求越来越强烈</p></li><li><p>用户计算机性能提高，可以承担一部分原来是由通信子网承担的通信处理功能</p></li></ul><p><strong>帧中继网的特点</strong></p><ul><li><p>高网络吞吐量、低传输延时</p></li><li><p>帧中继是一种采用虚电路的广域网技术，其协议简单、高效，网络吞吐量高、传输延时短</p></li><li><p>帧中继网工作在物理层与数据链路层，流量控制与纠错功能由高层协议完成</p></li><li><p>帧中继网处理一个帧的转发延时要比X.25网减小一个数量级；帧中继网的吞吐量要比X.25网提高一个数量级以上</p></li><li><p>帧中继也称为X.25的流水线方式</p></li><li><p>提供虚拟专网（VPN）服务</p></li><li><p>帧中继网的设计目标主要是局域网之间的互连</p></li><li><p>帧中继网的虚拟专网服务能提供较高的安全性和服务质量</p></li><li><p>帧中继采用面向连接的方式，为用户提供虚拟专用网络服务</p></li><li><p>帧中继网在数据链路层VPN技术中占主导地位</p></li></ul><p><strong>基于帧中继的VPN结构</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15725734668131/15725975307582.jpg" alt="-w610" title>                </div>                <div class="image-caption">-w610</div>            </figure><p><strong>从B-ISDN到ATM</strong></p><p>ISDN致力于实现的目标：</p><p>提供一个在世界范围内协调一致的数字通信网络，支持各种通信服务，并在不同的国家采用相同的标准；</p><p>为在通信网络之间进行数字传输提供完整的标准；</p><p>提供一个标准的用户接口，使通信网络内部的变化对终端用户透明。</p><p>宽带综合业务数据网（B-ISDN）的基本概念</p><p>B-ISDN的设计目标是将语音、数据、静态与动态图像的传输，以及传统的服务综合在一个通信网中，覆盖从低传输速率到高传输速率的各种非实时、实时与突发性的传输要求；</p><p>ATM技术符合B-ISDN的需求，B-ISDN的底层传输网选择了ATM技术。</p><p>ATM技术的主要特点：</p><p>ATM采用的是一种面向连接的技术。</p><p>ATM采用的信元（cell）长度为53B，其中信元头部长度为5B，数据长度为48B；</p><p>ATM以统计时分多路复用方式来动态分配带宽，网络传输延时小，能够适应实时通信的要求；</p><p>ATM的数据传输速率为155Mbps～2.4Gbps。</p><p><strong>光网络研究</strong></p><p>第一代：铜缆与无线射频；</p><p>第二代：光纤；</p><p>第三代：在传输网络中引入光交换机、光路由器，直接在光层配置光通道的传输网络</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15725734668131/15725978012539.jpg" alt="-w622" title>                </div>                <div class="image-caption">-w622</div>            </figure><p><strong>光以太网技术</strong></p><p><strong>光以太网技术研究的背景</strong></p><ul><li><p>利用光纤的巨大带宽资源，以及成熟和广泛应用的Ethernet网技术，为运营商建造新一代的网络提供技术支持；</p></li><li><p>基于这样一个设计思想，一种可运营的光以太网的概念应运而生，从根本上改变电信运营商规划、建设、管理思想。</p></li></ul><p><strong>光以太网的主要特征</strong></p><p>根据终端用户的实际应用需求分配带宽，保证带宽资源充分、合理应用；</p><p>用户访问网络资源必须经过认证和授权，确保用户对网络资源安全的使用；</p><p>及时获得用户的上网时间记录和流量记录，实行计费功能；</p><p>支持VPN和防火墙，有效地保证网络安全</p><p>提供分级的QoS服务；</p><p>方便、快速、灵活地适应用户和业务的扩展。</p><p>光以太网的技术优势：</p><p>组建同样规模的广域网或城域网，光以太网的造价是SONET的1/5，是ATM的1/10。</p><p>IEEE已完成速率从10Mbps、100Mbps、1Gbps到10Gbps的Ethernet技术标准制定，正在研发的速率为100Gbps的Ethernet产品；</p><p>能够覆盖从广域网、城域网到局域网的整个范围。</p><h3 id="广域网技术发展与TCP-IP协议的关系"><a href="#广域网技术发展与TCP-IP协议的关系" class="headerlink" title="广域网技术发展与TCP/IP协议的关系"></a>广域网技术发展与TCP/IP协议的关系</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15725734668131/15725979022077.jpg" alt="-w653" title>                </div>                <div class="image-caption">-w653</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;广域网的主要技术特征&quot;&gt;&lt;a href=&quot;#广域网的主要技术特征&quot; class=&quot;headerlink&quot; title=&quot;广域网的主要技术特征&quot;&gt;&lt;/a&gt;广域网的主要技术特征&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;广域网常由电信运营商组建、运营和维护&lt;/p&gt;
+&lt;/li&gt;
+
+      
+    
+    </summary>
+    
+      <category term="计算机科学与技术" scheme="https://github.com/jianxiongc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="网络技术发展" scheme="https://github.com/jianxiongc/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络概论 - TCP/IP 模型与互联网</title>
