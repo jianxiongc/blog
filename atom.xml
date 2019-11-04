@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/jianxiongc/"/>
-  <updated>2019-11-01T14:57:30.865Z</updated>
+  <updated>2019-11-04T14:10:58.529Z</updated>
   <id>https://github.com/jianxiongc/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络技术发展 - 局域网和城域网技术特征</title>
+    <link href="https://github.com/jianxiongc/2019/11/04/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%20-%20%E5%B1%80%E5%9F%9F%E7%BD%91%E5%92%8C%E5%9F%8E%E5%9F%9F%E7%BD%91%E6%8A%80%E6%9C%AF%E7%89%B9%E5%BE%81/"/>
+    <id>https://github.com/jianxiongc/2019/11/04/网络技术发展 - 局域网和城域网技术特征/</id>
+    <published>2019-11-04T14:10:10.000Z</published>
+    <updated>2019-11-04T14:10:58.529Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="局域网技术演变与发展"><a href="#局域网技术演变与发展" class="headerlink" title="局域网技术演变与发展"></a>局域网技术演变与发展</h2><p>局域网技术跟广域网的差别在于，局域网是一个小范围的。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15728754261057/15728755468098.jpg" alt="-w666" title>                </div>                <div class="image-caption">-w666</div>            </figure><p>不同的局域网按照时间排列的顺序</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15728754261057/15728756390985.jpg" alt="-w626" title>                </div>                <div class="image-caption">-w626</div>            </figure><h3 id="高速以太网技术的研究与发展"><a href="#高速以太网技术的研究与发展" class="headerlink" title="高速以太网技术的研究与发展"></a>高速以太网技术的研究与发展</h3><p>局域网发展的基本思路</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15728754261057/15728756587969.jpg" alt="-w515" title>                </div>                <div class="image-caption">-w515</div>            </figure><h3 id="无线局域网技术研究与发展"><a href="#无线局域网技术研究与发展" class="headerlink" title="无线局域网技术研究与发展"></a>无线局域网技术研究与发展</h3><p><strong>无线局域网的应用领域</strong></p><ul><li><p>作为传统局域网的扩充</p></li><li><p>用于建筑物之间的互连</p></li><li><p>用于移动结点的漫游访问</p></li><li><p>用于构建特殊的移动网络</p></li></ul><p><strong>无线局域网的分类</strong></p><ul><li>红外局域网</li><li>扩频局域网</li><li>窄带微博局域网</li></ul><p><strong>红外无线局域网分为</strong></p><ul><li>定向光束红外传输</li><li>全方位红外传输</li><li>漫反射红外传输</li></ul><p><strong>扩频局域网</strong></p><p>调频扩频 (FHSS)<br>直接序列扩频 (DSSS)</p><h3 id="蓝牙技术的研究与发展"><a href="#蓝牙技术的研究与发展" class="headerlink" title="蓝牙技术的研究与发展"></a>蓝牙技术的研究与发展</h3><p><strong>蓝牙技术研究的背景</strong></p><p>1994年，Ericsson公司与IBM、Intel、Nokia和Toshiba等4家公司发起，开发一个用于将计算机与通信设备、附加部件和外部设备，通过短距离的、低功耗的、低成本的无线信道连接的无线标准。这项技术被命名为蓝牙（Bluetooth）技术；</p><p>特别兴趣组SIG由Ericsson、Intel、IBM、Nokia和Toshiba等公司成立；</p><p>SIG的主要任务是致力于发展蓝牙规范；</p><p>1999年7月，SIG发布蓝牙规范1.0版，除了详细规定通信信道与通信过程，还规定13种网络应用所需的专门协议集。</p><p>无线个人区域网与IEEE802.15.4标准</p><p>IEEE802.15.4标准，主要考虑低速无线个人区域网络（LR-WPAN）应用问题；</p><p>2003年，IEEE批准低速无线个人区域网LR-WPAN标准—IEEE802.15.4，为近距离范围内不同设备之间低速互连提供统一标准。</p><p>IEEE802.15.4标准的主要特点</p><p>在不同的载波频率下实现20kbps、40kbps和250kbps三种不同的传输速率；</p><p>支持星形、点-点等2种网络拓扑结构；</p><p>使用16位和64位的2种地址格式，其中64位地址是全球惟一的扩展地址；</p><p>支持冲突避免（CA）的载波侦听多路访问技术；</p><p>支持确认机制，保证传输可靠性。</p><h3 id="ZigBee无线网络技术及应用"><a href="#ZigBee无线网络技术及应用" class="headerlink" title="ZigBee无线网络技术及应用"></a>ZigBee无线网络技术及应用</h3><p>ZigBee的基础是IEEE802.15.4标准，早期的名字是HomeRF或FireFly；</p><p>ZigBee联盟于2001年8月成立；2002年摩托罗拉公司、飞利浦公司、三菱公司与Invensys公司宣布加ZigBee联盟，研究下一代无线网络通信标准；</p><p>ZigBee适应于数据采集与控制的点多、数据传输量不大、覆盖面广、造价低的应用领域；</p><p>基于ZigBee的无线传感器网络已在家庭网络、安全监控、汽车自动化、消费电器、儿童玩具、医用设备控制、工业控制、无线定位等领域广泛应用。</p><h2 id="宽带城域网技术演变与发展"><a href="#宽带城域网技术演变与发展" class="headerlink" title="宽带城域网技术演变与发展"></a>宽带城域网技术演变与发展</h2><p><strong>城域网概念的发展与演变</strong></p><p>IEEE802最初的表述：城域网是以光纤为传输介质，能够提供45Mbps到150Mbps高传输速率，支持数据、语音与视频综合业务的数据传输，可以覆盖跨度在50公里到100公里的城市范围，实现高速宽带传输的数据通信网络</p><p>典型的产品是FDDI</p><p><strong>宽带城域网的定义</strong></p><ul><li><p>宽带城域网是以宽带光传输网为开放平台，以TCP/IP协议为基础，通过各种网络互联设备，实现语音、数据、图像、多媒体视频、IP电话、IP电视、IP接入和各种增值业务；</p></li><li><p>与广域计算机网络、广播电视网、电话交换网互联互通的本地综合业务网络，以满足语音、数据、图像、多媒体应用的需求</p></li><li><p>能够提供高传输速率和保证QoS的网络系统</p></li><li><p>人们将传统意义上的城域网扩展为宽带城域网</p></li></ul><p><strong>宽带城域网的应用和业务</strong></p><ul><li><p>大规模互联网接入的需求与交互式应用</p></li><li><p>远程办公、视频会议、网上教育等新的办公与生活方式</p></li><li><p>网络电视、视频点播、网络电话，以及由此引起的新的服务</p></li><li><p>家庭网络的应用</p></li></ul><p><strong>宽带城域网技术的主要特征</strong></p><ul><li><p>宽带城域网是基于计算机网络技术与IP协议，以电信网的可扩展性、可管理性为基础，在城市范围内汇聚宽带和窄带用户的接入，以满足政府、企业、学校等集团用户和个人用户对互联网和宽带多媒体服务需求为目标，而组建的综合宽带网络</p></li><li><p>从传输技术角度来看，宽带城域网应在计算机网络、公共电话交换网、移动通信网和有线电视网的基础上，为语音、数字、视频提供一个互连互通的通信平台</p></li><li><p>城域网与广域网在设计上的出发点不同。广域网要求重点保证高数据传输容量，而城域网则要求重点保证高数据交换容量</p></li><li><p>宽带城域网是传统的计算机网络、电信网络与有线电视网技术的融合，也是传统的电信服务、有线电视服务与现代的互联网服务的融合</p></li></ul><p><strong>总结：以光传输网络为基础，以IP协议为核心，融合各种网络，支持多种业务。</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;局域网技术演变与发展&quot;&gt;&lt;a href=&quot;#局域网技术演变与发展&quot; class=&quot;headerlink&quot; title=&quot;局域网技术演变与发展&quot;&gt;&lt;/a&gt;局域网技术演变与发展&lt;/h2&gt;&lt;p&gt;局域网技术跟广域网的差别在于，局域网是一个小范围的。&lt;/p&gt;
+&lt;figure
+      
+    
+    </summary>
+    
+      <category term="计算机科学与技术" scheme="https://github.com/jianxiongc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="网络技术发展" scheme="https://github.com/jianxiongc/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/"/>
+    
+  </entry>
   
   <entry>
     <title>网络技术发展 - 广域网技术特征</title>
