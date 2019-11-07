@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/jianxiongc/"/>
-  <updated>2019-11-04T14:10:58.529Z</updated>
+  <updated>2019-11-07T14:04:54.262Z</updated>
   <id>https://github.com/jianxiongc/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络技术发展 - 接入网技术</title>
+    <link href="https://github.com/jianxiongc/2019/11/07/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95%20-%20%E6%8E%A5%E5%85%A5%E7%BD%91%E6%8A%80%E6%9C%AF/"/>
+    <id>https://github.com/jianxiongc/2019/11/07/网络技术发展 - 接入网技术/</id>
+    <published>2019-11-07T14:04:19.000Z</published>
+    <updated>2019-11-07T14:04:54.262Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="接入技术发展的背景"><a href="#接入技术发展的背景" class="headerlink" title="接入技术发展的背景"></a>接入技术发展的背景</h3><p>接入技术解决的是最终用户接入宽带城域网的问题</p><p>由于互联网的应用越来越广泛，社会对接入技术的需求越来越强烈，对于信息产业来说，接入技术有广阔的市场前景，因此它已成为当前网络技术研究、应用与产业发展的热点问题</p><h4 id="接入服务的界定"><a href="#接入服务的界定" class="headerlink" title="接入服务的界定"></a>接入服务的界定</h4><p>互联网接入服务是指利用接入服务器和相应的软硬件资源建立业务结点，并利用公用电信基础设施将业务结点与互联网骨干网相连接，以便为各类用户提供接入互联网的服务</p><p>用户可以利用公用电话网或其它接入手段连接到业务结点，并通过该结点接入互联网</p><p>接入技术的发展促进了计算机网络与电信通信网、广播电视网的三网融合</p><p>为了支持各种类型信息的传输，满足电子政务、电子商务、远程教育、远程医疗、分布式计算、数字图书馆、网上电话、视频会议与视频点播等不同应用QoS的需求，人们将发展的基点放在宽带骨干网与宽带接入的建设上</p><h4 id="接入技术的基本类型"><a href="#接入技术的基本类型" class="headerlink" title="接入技术的基本类型"></a>接入技术的基本类型</h4><p><strong>接入方式分为:</strong></p><ul><li><p>家庭接入</p></li><li><p>校园接入</p></li><li><p>机关</p></li><li><p>企业接入</p></li></ul><p><strong>接入技术分为:</strong></p><ul><li><p>有线接入</p></li><li><p>无线接入</p></li></ul><p><strong>从实现技术的角度宽带接入技术主要分为</strong></p><ul><li><p>数字用户线xDSL技术</p></li><li><p>光纤同轴电缆混合网HFC技术 （广播电视）</p></li><li><p>光纤接入技术</p></li><li><p>无线接入技术</p></li><li><p>局域网接入技术</p></li></ul><h4 id="数字用户线xDSL接入技术"><a href="#数字用户线xDSL接入技术" class="headerlink" title="数字用户线xDSL接入技术"></a>数字用户线xDSL接入技术</h4><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15729581985812/15729586574322.jpg" alt="-w589" title>                </div>                <div class="image-caption">-w589</div>            </figure><p><strong>ADSL的主要特点</strong></p><p>可以在现有的用户电话线上以重叠和不干扰传统模拟电话业务，同时提供互联网在线访问、远程办公、视频点播等高速数字业务；</p><p>用户不需要专门为获得ADSL服务而重新铺设电缆；</p><p>提供的非对称带宽特性，在5公里的范围内，上行速率为16～640kbps，下行速率为1.5～9.0Mbps。用户可以根据需要选择上行和下行速率；</p><p>ADSL调制解调器不但具有调制解调的作用，同时兼有网桥和路由器的功能；</p><p>推广ADSL技术时用户端的投资小，推广容易。</p><p><strong>光纤同轴电缆混合HFC网</strong></p><p>HFC是一个双向传输系统；</p><p>HFC用户可以按照传统方式接收电视节目，也可以实现视频点播、IP电话、发送E-Mail、浏览Web的双向服务功能；</p><p>HFC采用非对称的传输速率，上行速率为10Mbps，下行速率为10～40Mbps；</p><p>我国的有线电视网的覆盖面很广，因此HFC已成为一种极具竞争力的宽带接入技术。</p><p><strong>光纤接入技术</strong></p><p>光纤到路边（FTTC）</p><p>光纤到小区（FTTZ）</p><p>光纤到大楼（FTTB）</p><p>光纤到办公室（FTTO）</p><p>光纤到户（FTTH）</p><p><strong>宽带无线接入技术与802.16标准</strong></p><p>IEEE802.16标准全称是“固定带宽无线访问系统空间接口”，也称为无线城域网（WMAN）或无线本地环路（wireless local loop）标准；</p><p>IEEE802.16标准体系的主要目标是制定2～66MHz频段的无线接入系统的物理层与介质访问控制子层规范；</p><p>致力于IEEE802.16标准WMAN推广应用的论坛组织是WiMAX。</p><p><strong>总结</strong></p><p>从网络技术发展的过程看，最先出现的是广域网，然后是局域网。城域网研究最初是融于局域网研究范围中。在互联网大规模接入需求的推动下，接入技术的发展导致宽带城域网的概念、技术、结构的演变与发展。</p><p>广域网、城域网与局域网区别在于：设计目标不同，覆盖地理范围不同，核心技术与标准不同，组建与管理方式不同。</p><p>如果说广域网的作用是扩大信息资源共享的范围，局域网的作用是增加信息资源共享的深度，则城域网的作用是方便大量用户计算机接入互联网。</p><p>互联网的应用促进计算机网络、电信网络与广播电视网络在技术上的融合；</p><p>光以太网技术的发展将导致广域网、城域网与局域网在技术上的融合。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;接入技术发展的背景&quot;&gt;&lt;a href=&quot;#接入技术发展的背景&quot; class=&quot;headerlink&quot; title=&quot;接入技术发展的背景&quot;&gt;&lt;/a&gt;接入技术发展的背景&lt;/h3&gt;&lt;p&gt;接入技术解决的是最终用户接入宽带城域网的问题&lt;/p&gt;
+&lt;p&gt;由于互联网的应用越来越广
+      
+    
+    </summary>
+    
+      <category term="计算机科学与技术" scheme="https://github.com/jianxiongc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="网络技术发展" scheme="https://github.com/jianxiongc/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%8F%91%E5%B1%95/"/>
+    
+  </entry>
   
   <entry>
     <title>网络技术发展 - 局域网和城域网技术特征</title>
