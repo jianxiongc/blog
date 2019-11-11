@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/jianxiongc/"/>
-  <updated>2019-11-07T14:04:54.262Z</updated>
+  <updated>2019-11-11T15:14:41.258Z</updated>
   <id>https://github.com/jianxiongc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>互联网应用技术 - 互联网应用发展与应用层协议</title>
+    <link href="https://github.com/jianxiongc/2019/11/11/%E4%BA%92%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E6%8A%80%E6%9C%AF%20-%20%E4%BA%92%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E5%8F%91%E5%B1%95%E4%B8%8E%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE/"/>
+    <id>https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/</id>
+    <published>2019-11-11T14:14:19.000Z</published>
+    <updated>2019-11-11T15:14:41.258Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="互联网应用技术发展的3个阶段"><a href="#互联网应用技术发展的3个阶段" class="headerlink" title="互联网应用技术发展的3个阶段"></a>互联网应用技术发展的3个阶段</h3><p><strong>基本的网络服务</strong></p><ul><li>TELNET</li><li>E-Mail</li><li>FTP</li><li>BBS</li><li>Usernet</li></ul><p><strong>基于Web的网络服务</strong></p><ul><li>Web</li><li>电子商务</li><li>电子政务</li><li>远程教育</li><li>远程医疗</li></ul><p><strong>新的网络服务</strong></p><ul><li>搜索引擎</li><li>网络电视</li><li>网络电话</li><li>网络视频</li><li>博客</li><li>播客</li><li>即时通讯</li><li>网络游戏</li><li>网络出版</li><li>网络广告</li><li>网络存储</li><li>网络计算</li></ul><h3 id="互联网技术的两种工作模式"><a href="#互联网技术的两种工作模式" class="headerlink" title="互联网技术的两种工作模式"></a>互联网技术的两种工作模式</h3><p>C/S 模式 和 P2P 模式</p><p><strong>C/S 的的特点</strong></p><p>在客户/服务器模式中, 客户端与服务器在网络服务中的地位不平等， 服务器在网络服务中处于中心地位。<br>采用 C/S模式的主要原因是网络资源分布的不均匀性<br>网络中计算机系统的类型、硬件结构、功能都存在着很大的差异。<br>很多大型应用软件都是安装在一台专用的服务器中，用户需要通过互联网去访问服务器，成为合法用户之后才能使用网络的软件资源。<br>从信息资源的角度来看，某一类型的数据、文本、图像、视频或音乐资源存放在一台或者几台大型服务器中，合法用户可以通过互联网来访问这些资源。</p><p><strong>P2P - 对等网络的基本概念</strong></p><p>P2P通信模式是指P2P网络中对等节点之间的通信能力。<br>P2P网络是指在互联网中对等节点组成的一种动态的逻辑网络。<br>P2P实现技术是指为实现对等节点之间直接通信的功能和特定的应用所需设计的协议、软件等</p><p><strong>C/S 与 P2P 模式比较</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15730415771891/15731363484652.jpg" alt="-w483" title>                </div>                <div class="image-caption">-w483</div>            </figure><h3 id="互联网基本网络应用与应用层协议"><a href="#互联网基本网络应用与应用层协议" class="headerlink" title="互联网基本网络应用与应用层协议"></a>互联网基本网络应用与应用层协议</h3><p><strong>远程登录服务与 TELNET 协议</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15730415771891/15731364503686.jpg" alt="-w661" title>                </div>                <div class="image-caption">-w661</div>            </figure><p><strong>电子邮件服务与 SMTP 协议</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15730415771891/15731364869394.jpg" alt="-w652" title>                </div>                <div class="image-caption">-w652</div>            </figure><p><strong>文件传输服务与 FTP、TFTP 协议</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15730415771891/15731365189098.jpg" alt="-w577" title>                </div>                <div class="image-caption">-w577</div>            </figure><p><strong>网络新闻与 NNTP 协议</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="media/15730415771891/15731365421097.jpg" alt="-w624" title>                </div>                <div class="image-caption">-w624</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;互联网应用技术发展的3个阶段&quot;&gt;&lt;a href=&quot;#互联网应用技术发展的3个阶段&quot; class=&quot;headerlink&quot; title=&quot;互联网应用技术发展的3个阶段&quot;&gt;&lt;/a&gt;互联网应用技术发展的3个阶段&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;基本的网络服务&lt;/stron
+      
+    
+    </summary>
+    
+      <category term="计算机科学与技术" scheme="https://github.com/jianxiongc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="互联网应用技术" scheme="https://github.com/jianxiongc/tags/%E4%BA%92%E8%81%94%E7%BD%91%E5%BA%94%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>网络技术发展 - 接入网技术</title>

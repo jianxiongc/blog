@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>互联网应用技术 - 互联网应用发展与应用层协议 | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="互联网应用技术">
+    <meta name="description" content="互联网应用技术发展的3个阶段基本的网络服务  TELNET E-Mail FTP BBS Usernet  基于Web的网络服务  Web 电子商务 电子政务 远程教育 远程医疗  新的网络服务  搜索引擎 网络电视 网络电话 网络视频 博客 播客 即时通讯 网络游戏 网络出版 网络广告 网络存储 网络计算  互联网技术的两种工作模式C/S 模式 和 P2P 模式 C/S 的的特点 在客户/服务器">
+<meta name="keywords" content="互联网应用技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="互联网应用技术 - 互联网应用发展与应用层协议">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="互联网应用技术发展的3个阶段基本的网络服务  TELNET E-Mail FTP BBS Usernet  基于Web的网络服务  Web 电子商务 电子政务 远程教育 远程医疗  新的网络服务  搜索引擎 网络电视 网络电话 网络视频 博客 播客 即时通讯 网络游戏 网络出版 网络广告 网络存储 网络计算  互联网技术的两种工作模式C/S 模式 和 P2P 模式 C/S 的的特点 在客户/服务器">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/11/11/互联网应用技术%20-%20互联网应用发展与应用层协议/media/15730415771891/15731363484652.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/11/11/互联网应用技术%20-%20互联网应用发展与应用层协议/media/15730415771891/15731364503686.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/11/11/互联网应用技术%20-%20互联网应用发展与应用层协议/media/15730415771891/15731364869394.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/11/11/互联网应用技术%20-%20互联网应用发展与应用层协议/media/15730415771891/15731365189098.jpg">
+<meta property="og:image" content="https://github.com/jianxiongc/2019/11/11/互联网应用技术%20-%20互联网应用发展与应用层协议/media/15730415771891/15731365421097.jpg">
+<meta property="og:updated_time" content="2019-11-11T15:14:41.258Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="互联网应用技术 - 互联网应用发展与应用层协议">
+<meta name="twitter:description" content="互联网应用技术发展的3个阶段基本的网络服务  TELNET E-Mail FTP BBS Usernet  基于Web的网络服务  Web 电子商务 电子政务 远程教育 远程医疗  新的网络服务  搜索引擎 网络电视 网络电话 网络视频 博客 播客 即时通讯 网络游戏 网络出版 网络广告 网络存储 网络计算  互联网技术的两种工作模式C/S 模式 和 P2P 模式 C/S 的的特点 在客户/服务器">
+<meta name="twitter:image" content="https://github.com/jianxiongc/2019/11/11/互联网应用技术%20-%20互联网应用发展与应用层协议/media/15730415771891/15731363484652.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">互联网应用技术 - 互联网应用发展与应用层协议</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">互联网应用技术 - 互联网应用发展与应用层协议</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-11T14:14:19.000Z" itemprop="datePublished" class="page-time">
+  2019-11-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机科学与技术/">计算机科学与技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#互联网应用技术发展的3个阶段"><span class="post-toc-number">1.</span> <span class="post-toc-text">互联网应用技术发展的3个阶段</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#互联网技术的两种工作模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">互联网技术的两种工作模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#互联网基本网络应用与应用层协议"><span class="post-toc-number">3.</span> <span class="post-toc-text">互联网基本网络应用与应用层协议</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-互联网应用技术 - 互联网应用发展与应用层协议"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">互联网应用技术 - 互联网应用发展与应用层协议</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-11 22:14:19" datetime="2019-11-11T14:14:19.000Z"  itemprop="datePublished">2019-11-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机科学与技术/">计算机科学与技术</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="互联网应用技术发展的3个阶段"><a href="#互联网应用技术发展的3个阶段" class="headerlink" title="互联网应用技术发展的3个阶段"></a>互联网应用技术发展的3个阶段</h3><p><strong>基本的网络服务</strong></p>
+<ul>
+<li>TELNET</li>
+<li>E-Mail</li>
+<li>FTP</li>
+<li>BBS</li>
+<li>Usernet</li>
+</ul>
+<p><strong>基于Web的网络服务</strong></p>
+<ul>
+<li>Web</li>
+<li>电子商务</li>
+<li>电子政务</li>
+<li>远程教育</li>
+<li>远程医疗</li>
+</ul>
+<p><strong>新的网络服务</strong></p>
+<ul>
+<li>搜索引擎</li>
+<li>网络电视</li>
+<li>网络电话</li>
+<li>网络视频</li>
+<li>博客</li>
+<li>播客</li>
+<li>即时通讯</li>
+<li>网络游戏</li>
+<li>网络出版</li>
+<li>网络广告</li>
+<li>网络存储</li>
+<li>网络计算</li>
+</ul>
+<h3 id="互联网技术的两种工作模式"><a href="#互联网技术的两种工作模式" class="headerlink" title="互联网技术的两种工作模式"></a>互联网技术的两种工作模式</h3><p>C/S 模式 和 P2P 模式</p>
+<p><strong>C/S 的的特点</strong></p>
+<p>在客户/服务器模式中, 客户端与服务器在网络服务中的地位不平等， 服务器在网络服务中处于中心地位。<br>采用 C/S模式的主要原因是网络资源分布的不均匀性<br>网络中计算机系统的类型、硬件结构、功能都存在着很大的差异。<br>很多大型应用软件都是安装在一台专用的服务器中，用户需要通过互联网去访问服务器，成为合法用户之后才能使用网络的软件资源。<br>从信息资源的角度来看，某一类型的数据、文本、图像、视频或音乐资源存放在一台或者几台大型服务器中，合法用户可以通过互联网来访问这些资源。</p>
+<p><strong>P2P - 对等网络的基本概念</strong></p>
+<p>P2P通信模式是指P2P网络中对等节点之间的通信能力。<br>P2P网络是指在互联网中对等节点组成的一种动态的逻辑网络。<br>P2P实现技术是指为实现对等节点之间直接通信的功能和特定的应用所需设计的协议、软件等</p>
+<p><strong>C/S 与 P2P 模式比较</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15730415771891/15731363484652.jpg" alt="-w483" title>
+                </div>
+                <div class="image-caption">-w483</div>
+            </figure>
+
+<h3 id="互联网基本网络应用与应用层协议"><a href="#互联网基本网络应用与应用层协议" class="headerlink" title="互联网基本网络应用与应用层协议"></a>互联网基本网络应用与应用层协议</h3><p><strong>远程登录服务与 TELNET 协议</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15730415771891/15731364503686.jpg" alt="-w661" title>
+                </div>
+                <div class="image-caption">-w661</div>
+            </figure>
+
+<p><strong>电子邮件服务与 SMTP 协议</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15730415771891/15731364869394.jpg" alt="-w652" title>
+                </div>
+                <div class="image-caption">-w652</div>
+            </figure>
+
+<p><strong>文件传输服务与 FTP、TFTP 协议</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15730415771891/15731365189098.jpg" alt="-w577" title>
+                </div>
+                <div class="image-caption">-w577</div>
+            </figure>
+
+<p><strong>网络新闻与 NNTP 协议</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="media/15730415771891/15731365421097.jpg" alt="-w624" title>
+                </div>
+                <div class="image-caption">-w624</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-11-11T15:14:41.258Z" itemprop="dateUpdated">2019-11-11 23:14:41</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/" target="_blank" rel="external">https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/互联网应用技术/">互联网应用技术</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/&title=《互联网应用技术 - 互联网应用发展与应用层协议》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/&title=《互联网应用技术 - 互联网应用发展与应用层协议》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《互联网应用技术 - 互联网应用发展与应用层协议》 — Jianxiong&url=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/11/07/网络技术发展 - 接入网技术/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">网络技术发展 - 接入网技术</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/&title=《互联网应用技术 - 互联网应用发展与应用层协议》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/&title=《互联网应用技术 - 互联网应用发展与应用层协议》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《互联网应用技术 - 互联网应用发展与应用层协议》 — Jianxiong&url=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADJElEQVR42u3awW7qQAwF0P7/T1PprSpVHa7toEfMyQrRlMwZFhfb8/UVX49/11/v/7x+v5/cn3/y7/WcP2d0YWNjY9+E/TheyT1n3vmdBHN+na8TGxsbezf7HFrVIKluRG/j8jDDxsbGxs4j5HzPuQipBh42NjY29oRd+NHfiqXkv7CxsbGxq02lfFQwR+aNp5f30rCxsbHfnl0d9L7z6xfOt7GxsbHfkv0oXkmo5K2l/J6LFdjY2NiL2PmCkjZNtfWfh2W1mIlWhY2Njb2IPTmmU92I/OBmNQ7PX94TPDY2NvbN2cmDr9rdXrO+F2BPIhkbGxt7Eft1baCkOMkBk782SxFsbGzst2dXBwCjKqdY6kxaVE9c2NjY2IvYOSlv1hdGrcW2VDUOn5RY2NjY2CvY1aKi17I5f1o1FPOB8Z8rwcbGxl7Hzn/095o4SeRU2b3QxcbGxt7Hri6i18TpLbraVEpWi42Njb2P3RvE9tpGvUM25cM3yQgBGxsbex27WnL0ipO8qTQZJ0RDBWxsbOxF7N5P+fl2XFtsVIMQGxsbexN70srvlQH/t6l0wQQDGxsb++3ZedN/vjV5QFZDNKrAsLGxsVewq8GTB9KktdTbmkLthY2Njb2O3SMlwTZpM03aRlHoYmNjY69g5//Wi4p5RCXHd6oBjI2Njb2JnbR7khibBExvfJuHLjY2NvZudrnnNChR8nZPNTjL5Q02Njb2InY1xuZHavLoumpUXKBiY2Nj35bdKwaStlRvv/OQG0UXNjY29mp2NWZ6j8+LmfkYABsbG3sre350Mh/05hFVHTZXvwBsbGzsrexeYVCNrjwge8c6o43AxsbGXsRODsRMNqIae9VSpzc8wMbGxt7E7sXMZAxwFax6JChqKmFjY2PfkH3VY64qV5I4nN+PjY2NvY+dt3tyas7rHRjqHQYtpDc2Njb2DdnzYzF5m/5cMPQGBnnxg42Njf3J7DzS8pDLi5k8uqJwxcbGxv5gdq+J04u9q1aIjY2N/QnsalOpeiYobzlNGk+FQgUbGxt7EfuqIzIJIH/WJMyqI2dsbGzs27K/Afa2NQC814ksAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
