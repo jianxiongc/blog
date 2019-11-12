@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>应用层协议 - 网络应用与应用系统设计方法 | Jianxiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="应用层协议">
+    <meta name="description" content="C/S工作模式的特点服务器程序在固定的IP地址和熟知的端口号上一直处于打开状态，随时准备接收客户端的服务请求； 客户端程序可以根据用户需要，在访问服务器时打开； 客户端之间不能够直接通信； 当同时向服务器发出服务请求的客户数量比较多时，一台服务器不能满足多个客户请求的需要。人们经常使用由多台服务器组成的服务器集群（server farm）构成一个虚拟服务器； 如果在客户数量比较少，或者客户服务请求">
+<meta name="keywords" content="应用层协议">
+<meta property="og:type" content="article">
+<meta property="og:title" content="应用层协议 - 网络应用与应用系统设计方法">
+<meta property="og:url" content="https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/index.html">
+<meta property="og:site_name" content="Jianxiong">
+<meta property="og:description" content="C/S工作模式的特点服务器程序在固定的IP地址和熟知的端口号上一直处于打开状态，随时准备接收客户端的服务请求； 客户端程序可以根据用户需要，在访问服务器时打开； 客户端之间不能够直接通信； 当同时向服务器发出服务请求的客户数量比较多时，一台服务器不能满足多个客户请求的需要。人们经常使用由多台服务器组成的服务器集群（server farm）构成一个虚拟服务器； 如果在客户数量比较少，或者客户服务请求">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-12T15:01:40.740Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="应用层协议 - 网络应用与应用系统设计方法">
+<meta name="twitter:description" content="C/S工作模式的特点服务器程序在固定的IP地址和熟知的端口号上一直处于打开状态，随时准备接收客户端的服务请求； 客户端程序可以根据用户需要，在访问服务器时打开； 客户端之间不能够直接通信； 当同时向服务器发出服务请求的客户数量比较多时，一台服务器不能满足多个客户请求的需要。人们经常使用由多台服务器组成的服务器集群（server farm）构成一个虚拟服务器； 如果在客户数量比较少，或者客户服务请求">
+    
+        <link rel="alternate" type="application/atom+xml" title="Jianxiong" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/carillustration.gif)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jianxiong</h5>
+          <a href="mailto:jianxiong_1997@126.com" title="jianxiong_1997@126.com" class="mail">jianxiong_1997@126.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/jianxiongc" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                还没想好放啥
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">应用层协议 - 网络应用与应用系统设计方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">应用层协议 - 网络应用与应用系统设计方法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-11T14:14:19.000Z" itemprop="datePublished" class="page-time">
+  2019-11-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机科学与技术/">计算机科学与技术</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-S工作模式的特点"><span class="post-toc-number">1.</span> <span class="post-toc-text">C/S工作模式的特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#P2P工作模式的特点"><span class="post-toc-number">2.</span> <span class="post-toc-text">P2P工作模式的特点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#网络应用与应用层协议"><span class="post-toc-number">3.</span> <span class="post-toc-text">网络应用与应用层协议</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#网络应用对低层提供服务的要求"><span class="post-toc-number">4.</span> <span class="post-toc-text">网络应用对低层提供服务的要求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#网络应用系统对传输层协议的选择"><span class="post-toc-number">5.</span> <span class="post-toc-text">网络应用系统对传输层协议的选择</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-应用层协议 - 网络应用与应用系统设计方法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">应用层协议 - 网络应用与应用系统设计方法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-11 22:14:19" datetime="2019-11-11T14:14:19.000Z"  itemprop="datePublished">2019-11-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/计算机科学与技术/">计算机科学与技术</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="C-S工作模式的特点"><a href="#C-S工作模式的特点" class="headerlink" title="C/S工作模式的特点"></a>C/S工作模式的特点</h3><p>服务器程序在固定的IP地址和熟知的端口号上一直处于打开状态，随时准备接收客户端的服务请求；</p>
+<p>客户端程序可以根据用户需要，在访问服务器时打开；</p>
+<p>客户端之间不能够直接通信；</p>
+<p>当同时向服务器发出服务请求的客户数量比较多时，一台服务器不能满足多个客户请求的需要。人们经常使用由多台服务器组成的服务器集群（server farm）构成一个虚拟服务器；</p>
+<p>如果在客户数量比较少，或者客户服务请求不频繁时，也可以将多种服务器应用程序安装在一台计算机中。一台服务器就可以提供多种网络服务功能。</p>
+<h3 id="P2P工作模式的特点"><a href="#P2P工作模式的特点" class="headerlink" title="P2P工作模式的特点"></a>P2P工作模式的特点</h3><p>P2P应用程序体系结构分为：</p>
+<ul>
+<li><p>纯P2P模式</p>
+</li>
+<li><p>P2P与C/S混合模式</p>
+</li>
+</ul>
+<p><strong>纯P2P模式的应用程序体系结构特点</strong></p>
+<p>所有的结点地位是平等的，都可以以对等的方式直接通信；</p>
+<p>纯P2P应用程序体系结构的典型例子如Gnutella。Gnutella是一个P2P文件共享应用程序；</p>
+<p>P2P工作模式的最大优点是它的信息共享的灵活性与系统的可扩展性。在一个P2P文件共享应用程序中，可以有数以百万计的对等结点加入，每个结点即可以作为一个客户端，也可以起到服务器的作用。</p>
+<p><strong>P2P与C/S的混合模式</strong></p>
+<p>随着P2P规模的扩大，很多P2P应用实际上采用P2P与C/S的混合模式；</p>
+<p>典型的软件是Napster；</p>
+<p>在Napster系统中，共享的MP3文件是直接在两个对等结点之间直接传输，但是提出共享请求的结点需要通过一个查询服务器找到当前打开的对等结点的地址；</p>
+<p>目前大量使用的P2P即时通信程序也采用P2P与C/S的混合模式。</p>
+<h3 id="网络应用与应用层协议"><a href="#网络应用与应用层协议" class="headerlink" title="网络应用与应用层协议"></a>网络应用与应用层协议</h3><p>—应用层协议规定应用程序进程之间通信所遵循的通信规则。</p>
+<p>应用层协议的基本内容：</p>
+<p>交换报文的类型，如请求报文与应答报文；</p>
+<p>各种报文格式与包含的字段类型；</p>
+<p>对每个字段意义的描述；</p>
+<p>进程在什么时间、如何发送报文，以及如何响应。</p>
+<p><strong>应用层协议的类型</strong></p>
+<p>标准的网络应用层协议</p>
+<p>E-mail、FTP、TELNET、Web等</p>
+<p>协议以RFC文档的方式公布</p>
+<p>遵守RFC文档所制定的应用层协议开发的应用系统之间可以实现互联和互操作；</p>
+<p>专用的应用层协议</p>
+<p>目前P2P文件共享的应用层协议一般都属于专用协议。</p>
+<h3 id="网络应用对低层提供服务的要求"><a href="#网络应用对低层提供服务的要求" class="headerlink" title="网络应用对低层提供服务的要求"></a>网络应用对低层提供服务的要求</h3><p>应用程序的开发者将根据网络应用的实际需求来决定传输层是选择TCP协议还是UDP协议，以及主要的技术参数；</p>
+<p>传输层协议是在主机的操作系统控制下，为应用程序提供确定的服务。</p>
+<p>传输层QoS表现在：可靠性、带宽与延时等方面。</p>
+<p>E-mail、FTP、TELNET、Web、IM、IPTV、VoIP，以及金融应用系统、电子政务、电子商务、远程医疗、远程数据存储等应用对数据传输的可靠性、带宽和延时要求不同；</p>
+<p>金融应用系统、电子政务、电子商务、远程医疗、远程数据存储等应用对数据传输的可靠性要求高；</p>
+<p>IPTV、VoIP等对带宽和延时要求比较高，而对数据传输的可靠性要求不是很严格，一个分组的丢失一般不会影响语音与图像的收听或观看的效果。</p>
+<h3 id="网络应用系统对传输层协议的选择"><a href="#网络应用系统对传输层协议的选择" class="headerlink" title="网络应用系统对传输层协议的选择"></a>网络应用系统对传输层协议的选择</h3><p><strong>TCP协议可以提供的服务：</strong></p>
+<p>支持可靠的面向连接服务</p>
+<p>支持字节流传输服务</p>
+<p>支持全双工服务</p>
+<p><strong>选择TCP协议时需要注意的问题</strong></p>
+<p>TCP协议的拥塞控制机制是通过限制每个TCP连接来达到公平使用网络带宽的方法；</p>
+<p>对于有最低带宽限制的实时视频应用来说，抑制传输速率会造成严重的影响；</p>
+<p>实时视频应用应该选择UDP协议，而不是TCP协议。</p>
+<p><strong>UDP协议能够提供的服务</strong></p>
+<p>UDP是一种无连接、不可靠的传输层协议；</p>
+<p>UDP协议没有提供拥塞控制机制；</p>
+<p>UDP协议不提供最小延时保证。</p>
+<p><strong>应用层协议与传输层协议的关系</strong></p>
+<table>
+<thead>
+<tr>
+<th>网络应用类型</th>
+<th>应用层协议</th>
+<th>传输层协议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>E-mail</td>
+<td>STMP</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>TELNET</td>
+<td>TELNET</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>Web</td>
+<td>HTTP</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>FTP</td>
+<td>FTP</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>DNS</td>
+<td>UDP 或 TCP</td>
+</tr>
+<tr>
+<td>流媒体</td>
+<td>Real Network</td>
+<td>UDP 或 TCP</td>
+</tr>
+<tr>
+<td>VoIP</td>
+<td>Net2phone</td>
+<td>UDP</td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-11-12T15:01:40.740Z" itemprop="dateUpdated">2019-11-12 23:01:40</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/blog/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/" target="_blank" rel="external">https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://github.com/jianxiongc">
+            <img src="/blog/img/avatar.jpg" alt="Jianxiong">
+            Jianxiong
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/应用层协议/">应用层协议</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/&title=《应用层协议 - 网络应用与应用系统设计方法》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/&title=《应用层协议 - 网络应用与应用系统设计方法》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《应用层协议 - 网络应用与应用系统设计方法》 — Jianxiong&url=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/11/11/互联网应用技术 - 互联网应用发展与应用层协议/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">互联网应用技术 - 互联网应用发展与应用层协议</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.jpg" data-alipay="/blog/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jianxiong &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/&title=《应用层协议 - 网络应用与应用系统设计方法》 — Jianxiong&pic=https://github.com/jianxiongc/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/&title=《应用层协议 - 网络应用与应用系统设计方法》 — Jianxiong&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《应用层协议 - 网络应用与应用系统设计方法》 — Jianxiong&url=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/&via=https://github.com/jianxiongc" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADNUlEQVR42u3aW24bQQwEQN//0soBDO82ybGjpWq/DFmwpkYBOnx8fcXP64fn+3uuX0l+e+rvHHiwsbGxH8J+XT7f33N9uORSfnrP9dmSS0ks2NjY2FvZ18Fw/Z55pF1fdH7FeShiY2NjfzI7P1BSxkxer3492NjY2Ni9pk/e1Tl1xdjY2NifyU5ipnr0/Li94uePemnY2NjYb8/Ow+b9f/6V+TY2Njb2G7NfxSdfmumVLvM4jBTY2NjYi9h5AOTX0WsA5Rd3avUHGxsbewe7N5TthUceftXWf3mkgY2Njb2OncRPEh55m776ub1G0s08BBsbG3sFu1cSVFdtquFXZeRnxsbGxt7KTlrwpxZxqqE1H0tH3zk2Njb2w9lJ8ExGwnkE5meo/rWoFMHGxsZ+LDsvM/Kj5CVB73OTCy1kHTY2NvbD2fkH54s1vYFBfk2TM2BjY2PvY+dj1N6KTz4kONVIKscYNjY29sPZ1fFtb9UmD615I+lY7YWNjY39KHbCONXi6Y2Tqws9Ny5sbGzsFezyDQ1Kl7MhlI+HT/zDwMbGxn53dhIt1bFB3tA/20iKrgAbGxt7EbsaM9WryVtLvRWcUTRiY2Njr2AnZUbe0JmPjSej6MIYAxsbG3sduxcqvVfy3/beE10ENjY29jp2r5xIYqy3GDTZtIlOiI2Njb2OXR3TJsfKxwa9qMtLppvBADY2NvbD2b8RMHnxkDf0kwKpN2DAxsbG3sHO2zd5YJxqDCWAA60lbGxs7IezeyFRXc3pAXpNrkLcYmNjY69jVxnV1lICy0ug/OKwsbGxd7OrTZx5Z6Za2PS+qmg2go2Njb2IXV3fGY1XB3+/WqLcjAewsbGxF7GTD8v/09/DJKs81WFzIbexsbGxH8h+FZ98kJCXEJPBbR5pUb5hY2NjP5BdDYNe1PVez6NxPpzGxsbGfjq7uhZZXe6pjpOrg4HeehA2Njb2Pva86dMrFarD4P/WS8PGxsZexJ5gehHYa1SNtk2xsbGxP4Y971pVFyir4+SbphI2Njb2InZv8X0SM9USojpIuPl0bGxs7EXsScxUC4zqek3S9L8ueA7Mt7GxsbHfl/0PBjE+2qgIxssAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://github.com/jianxiongc/"/>
-  <updated>2019-11-11T15:14:41.258Z</updated>
+  <updated>2019-11-12T15:01:40.740Z</updated>
   <id>https://github.com/jianxiongc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>应用层协议 - 网络应用与应用系统设计方法</title>
+    <link href="https://github.com/jianxiongc/2019/11/11/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%20-%20%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E4%B8%8E%E5%BA%94%E7%94%A8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/"/>
+    <id>https://github.com/jianxiongc/2019/11/11/应用层协议 - 网络应用与应用系统设计方法/</id>
+    <published>2019-11-11T14:14:19.000Z</published>
+    <updated>2019-11-12T15:01:40.740Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="C-S工作模式的特点"><a href="#C-S工作模式的特点" class="headerlink" title="C/S工作模式的特点"></a>C/S工作模式的特点</h3><p>服务器程序在固定的IP地址和熟知的端口号上一直处于打开状态，随时准备接收客户端的服务请求；</p><p>客户端程序可以根据用户需要，在访问服务器时打开；</p><p>客户端之间不能够直接通信；</p><p>当同时向服务器发出服务请求的客户数量比较多时，一台服务器不能满足多个客户请求的需要。人们经常使用由多台服务器组成的服务器集群（server farm）构成一个虚拟服务器；</p><p>如果在客户数量比较少，或者客户服务请求不频繁时，也可以将多种服务器应用程序安装在一台计算机中。一台服务器就可以提供多种网络服务功能。</p><h3 id="P2P工作模式的特点"><a href="#P2P工作模式的特点" class="headerlink" title="P2P工作模式的特点"></a>P2P工作模式的特点</h3><p>P2P应用程序体系结构分为：</p><ul><li><p>纯P2P模式</p></li><li><p>P2P与C/S混合模式</p></li></ul><p><strong>纯P2P模式的应用程序体系结构特点</strong></p><p>所有的结点地位是平等的，都可以以对等的方式直接通信；</p><p>纯P2P应用程序体系结构的典型例子如Gnutella。Gnutella是一个P2P文件共享应用程序；</p><p>P2P工作模式的最大优点是它的信息共享的灵活性与系统的可扩展性。在一个P2P文件共享应用程序中，可以有数以百万计的对等结点加入，每个结点即可以作为一个客户端，也可以起到服务器的作用。</p><p><strong>P2P与C/S的混合模式</strong></p><p>随着P2P规模的扩大，很多P2P应用实际上采用P2P与C/S的混合模式；</p><p>典型的软件是Napster；</p><p>在Napster系统中，共享的MP3文件是直接在两个对等结点之间直接传输，但是提出共享请求的结点需要通过一个查询服务器找到当前打开的对等结点的地址；</p><p>目前大量使用的P2P即时通信程序也采用P2P与C/S的混合模式。</p><h3 id="网络应用与应用层协议"><a href="#网络应用与应用层协议" class="headerlink" title="网络应用与应用层协议"></a>网络应用与应用层协议</h3><p>—应用层协议规定应用程序进程之间通信所遵循的通信规则。</p><p>应用层协议的基本内容：</p><p>交换报文的类型，如请求报文与应答报文；</p><p>各种报文格式与包含的字段类型；</p><p>对每个字段意义的描述；</p><p>进程在什么时间、如何发送报文，以及如何响应。</p><p><strong>应用层协议的类型</strong></p><p>标准的网络应用层协议</p><p>E-mail、FTP、TELNET、Web等</p><p>协议以RFC文档的方式公布</p><p>遵守RFC文档所制定的应用层协议开发的应用系统之间可以实现互联和互操作；</p><p>专用的应用层协议</p><p>目前P2P文件共享的应用层协议一般都属于专用协议。</p><h3 id="网络应用对低层提供服务的要求"><a href="#网络应用对低层提供服务的要求" class="headerlink" title="网络应用对低层提供服务的要求"></a>网络应用对低层提供服务的要求</h3><p>应用程序的开发者将根据网络应用的实际需求来决定传输层是选择TCP协议还是UDP协议，以及主要的技术参数；</p><p>传输层协议是在主机的操作系统控制下，为应用程序提供确定的服务。</p><p>传输层QoS表现在：可靠性、带宽与延时等方面。</p><p>E-mail、FTP、TELNET、Web、IM、IPTV、VoIP，以及金融应用系统、电子政务、电子商务、远程医疗、远程数据存储等应用对数据传输的可靠性、带宽和延时要求不同；</p><p>金融应用系统、电子政务、电子商务、远程医疗、远程数据存储等应用对数据传输的可靠性要求高；</p><p>IPTV、VoIP等对带宽和延时要求比较高，而对数据传输的可靠性要求不是很严格，一个分组的丢失一般不会影响语音与图像的收听或观看的效果。</p><h3 id="网络应用系统对传输层协议的选择"><a href="#网络应用系统对传输层协议的选择" class="headerlink" title="网络应用系统对传输层协议的选择"></a>网络应用系统对传输层协议的选择</h3><p><strong>TCP协议可以提供的服务：</strong></p><p>支持可靠的面向连接服务</p><p>支持字节流传输服务</p><p>支持全双工服务</p><p><strong>选择TCP协议时需要注意的问题</strong></p><p>TCP协议的拥塞控制机制是通过限制每个TCP连接来达到公平使用网络带宽的方法；</p><p>对于有最低带宽限制的实时视频应用来说，抑制传输速率会造成严重的影响；</p><p>实时视频应用应该选择UDP协议，而不是TCP协议。</p><p><strong>UDP协议能够提供的服务</strong></p><p>UDP是一种无连接、不可靠的传输层协议；</p><p>UDP协议没有提供拥塞控制机制；</p><p>UDP协议不提供最小延时保证。</p><p><strong>应用层协议与传输层协议的关系</strong></p><table><thead><tr><th>网络应用类型</th><th>应用层协议</th><th>传输层协议</th></tr></thead><tbody><tr><td>E-mail</td><td>STMP</td><td>TCP</td></tr><tr><td>TELNET</td><td>TELNET</td><td>TCP</td></tr><tr><td>Web</td><td>HTTP</td><td>TCP</td></tr><tr><td>FTP</td><td>FTP</td><td>TCP</td></tr><tr><td>DNS</td><td>DNS</td><td>UDP 或 TCP</td></tr><tr><td>流媒体</td><td>Real Network</td><td>UDP 或 TCP</td></tr><tr><td>VoIP</td><td>Net2phone</td><td>UDP</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;C-S工作模式的特点&quot;&gt;&lt;a href=&quot;#C-S工作模式的特点&quot; class=&quot;headerlink&quot; title=&quot;C/S工作模式的特点&quot;&gt;&lt;/a&gt;C/S工作模式的特点&lt;/h3&gt;&lt;p&gt;服务器程序在固定的IP地址和熟知的端口号上一直处于打开状态，随时准备接收客户
+      
+    
+    </summary>
+    
+      <category term="计算机科学与技术" scheme="https://github.com/jianxiongc/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="应用层协议" scheme="https://github.com/jianxiongc/tags/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>互联网应用技术 - 互联网应用发展与应用层协议</title>
